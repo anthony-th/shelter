@@ -145,10 +145,6 @@ body {
 	color: #292929;
 }
 
-.links:hover {
-	color: #292929;
-}
-
 .ourFriends__title,
 .contacts__title,
 .locations__title {
@@ -223,13 +219,6 @@ body {
 	content: ">>";
 }
 
-.button_paginator:nth-child(4):hover,
-.button_paginator:nth-child(5):hover {
-	cursor: pointer;
-	background-color: #FDDCC4;
-	border: transparent;
-	transition: 0.3s;
-}
 
 .ourFriends__title {
 	text-align: center;
@@ -370,19 +359,6 @@ footer {
 	width: 300px;
 	height: 310px;	
 }
-
-.card:hover .ourFriends__btn {
-	background-color: #FDDCC4;
-	transition: 0.3s;
-	border: transparent;
-}
-
-.card:hover {
-	box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-	background: #ffffff;
-	transition: 0.5s;
-	cursor: pointer;
-}	
 
 .burger-lines {
 	list-style: none;
@@ -825,4 +801,33 @@ footer {
 
 .shadow-inin {
 	left: 0;
+}
+
+@media (hover: hover) {
+
+	.links:hover {
+		color: #292929;
+	}
+
+	.button_paginator:nth-child(4):hover,
+	.button_paginator:nth-child(5):hover {
+		cursor: pointer;
+		background-color: #FDDCC4;
+		border: transparent;
+		transition: 0.3s;
+	}
+
+	.card:hover .ourFriends__btn {
+		background-color: #FDDCC4;
+		transition: 0.3s;
+		border: transparent;
+	}
+
+	.card:hover {
+		box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+		background: #ffffff;
+		transition: 0.5s;
+		cursor: pointer;
+	}	
+	
 }
