@@ -153,9 +153,6 @@ body {
 	align-items: center;
 }
 
-.links:hover {
-	color: #FAFAFA;
-}
 
 .logo {
 	flex-direction: column;
@@ -210,12 +207,7 @@ body {
 	padding-top: 16px;
 }
 
-.textblock__button:hover,
-.getBtn:hover,
-.youCan__cardBlock:hover {
-	background: #FDDCC4;
-	transition: 0.3s;
-}
+
 
 .textblock__title {
 	font-size: 44px;
@@ -268,8 +260,7 @@ body {
 
 .aboutTheShelter,
 .howYou,
-.ourFriends,
-.card:hover {
+.ourFriends {
 	background: #ffffff;
 }
 
@@ -313,10 +304,6 @@ body {
 	line-height: 160%;
 }
 
-/*.aboutTheShelter__title,
-.aboutTheShelter__text:nth-child(2) {
-	margin-bottom: 25px;
-}*/
 
 .ourFriends,
 .youCan {
@@ -394,9 +381,7 @@ body {
 	margin-bottom: 0;
 }
 
-.youCan__cardBlock:hover {
-	cursor: pointer;
-}
+
 
 .youCan-text__text {
 	color: #B2B2B2;
@@ -548,20 +533,6 @@ footer {
 	border-radius: 100px;
 	font-size: 17px;
 	line-height: 22px;
-	cursor: pointer;
-}
-
-.prevBtn:hover,
-.nextBtn:hover,
-.card:hover .ourFriends__btn {
-	background-color: #FDDCC4;
-	transition: 0.3s;
-	border: transparent;
-}
-
-.card:hover {
-	box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-	transition: 0.5s;
 	cursor: pointer;
 }
 
@@ -833,9 +804,6 @@ footer {
 	.icons {
 		column-gap: normal;
 		margin: 0;
-		/*justify-content: center;*/
-/*		display: grid;
-		grid-template-columns: 50% 50%;*/
 	}
 	.icon {
 		width: 170px;
@@ -1027,9 +995,6 @@ footer {
 	.icons {
 		column-gap: 5px;
 		margin: 0;
-		/*justify-content: center;*/
-/*		display: grid;
-		grid-template-columns: 50% 50%;*/
 	}
 	.icon {
 		width: 130px;
@@ -1532,4 +1497,42 @@ footer {
 
 .shadow-inin {
 	left: 0;
+}
+
+
+@media (hover: hover) {
+	
+	.links:hover {
+		color: #FAFAFA;
+	}
+
+	.textblock__button:hover,
+	.getBtn:hover,
+	.youCan__cardBlock:hover {
+		background: #FDDCC4;
+		transition: 0.3s;
+	}
+
+	.card:hover {
+		background: #ffffff;
+	}
+
+	.youCan__cardBlock:hover {
+		cursor: pointer;
+	}
+
+	.prevBtn:hover,
+	.nextBtn:hover,
+	.card:hover .ourFriends__btn {
+		background-color: #FDDCC4;
+		transition: 0.3s;
+		border: transparent;
+	}
+
+	.card:hover {
+		box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+		transition: 0.5s;
+		cursor: pointer;
+	}
+
 }
