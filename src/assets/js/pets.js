@@ -1,2 +1,2 @@
-import '../styles/pets.css';
+import '../styles/pets.scss';
 console.log('pets');
