@@ -15,6 +15,7 @@ const howContainer = document.createElement('div');
 howContainer.classList.add('how-you-container');
 const howTitle = document.createElement('h2');
 howTitle.classList.add('how-you-title');
+howTitle.id = 'help-shelter';
 howTitle.innerHTML = `How you can help<br>our shelter`;
 const howIcons = document.createElement('div');
 howIcons.classList.add('how-you-icons');

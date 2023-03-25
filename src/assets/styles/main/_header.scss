@@ -57,6 +57,7 @@
           font-size: 15px;
           line-height: 160%;
           .links {
+            user-select: none;
             color: #CDCDCD;
             &:hover {
               color: #FAFAFA;

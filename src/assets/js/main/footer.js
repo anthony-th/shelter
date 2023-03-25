@@ -10,6 +10,7 @@ const footerContainer = document.createElement('div');
 footerContainer.classList.add('footer-container');
 const footerContacts = document.createElement('div');
 footerContacts.classList.add('contacts');
+footerContacts.id = 'contacts';
 const footerContactsTitle = document.createElement('h3');
 footerContactsTitle.classList.add('contacts-title');
 footerContactsTitle.innerHTML = `For&nbsp;questions<br>and&nbsp;suggestions`;
@@ -39,6 +40,7 @@ footerLocationsTitle.innerHTML = `We&nbsp;are&nbsp;waiting<br>for&nbsp;your&nbsp
 const footerLocationsBoston = document.createElement('a');
 footerLocationsBoston.classList.add('location-boston');
 footerLocationsBoston.href = 'https://www.google.com/maps/place/1+Central+St,+Boston,+MA+02109,+%D0%A1%D0%A8%D0%90/@42.3585558,-71.056915,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370868bc2ce7b:0x82fa7db94f5fea9e!8m2!3d42.3585519!4d-71.0547263';
+footerLocationsBoston.target = '_blank';
 const footerLocationsBostonImg = document.createElement('img');
 footerLocationsBostonImg.classList.add('location-boston-img');
 footerLocationsBostonImg.src = locationImgSrc;
@@ -48,6 +50,7 @@ footerLocationsBostonText.textContent = '1 Central Street, Boston (entrance from
 const footerLocationsLondon = document.createElement('a');
 footerLocationsLondon.classList.add('location-london');
 footerLocationsLondon.href = 'https://www.google.com/maps/place/18+South+Rd,+Londonderry,+NH+03053,+%D0%A1%D0%A8%D0%90/@42.8246256,-71.364361,17z/data=!3m1!4b1!4m5!3m4!1s0x89e3ad7442d3b7b7:0x5550ec16f1a4554d!8m2!3d42.8246217!4d-71.3621723';
+footerLocationsLondon.target = '_blank';
 const footerLocationsLondonImg = document.createElement('img');
 footerLocationsLondonImg.classList.add('location-london-img');
 footerLocationsLondonImg.src = locationImgSrc;

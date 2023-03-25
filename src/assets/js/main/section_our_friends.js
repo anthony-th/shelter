@@ -10,6 +10,7 @@ const ourContainer = document.createElement('div');
 ourContainer.classList.add('our-friends-container');
 const ourTitle = document.createElement('h2');
 ourTitle.classList.add('our-friends-title');
+ourTitle.id = 'friends';
 ourTitle.innerHTML = `Our friends who<br>are looking for a house`;
 const ourSlider = document.createElement('div');
 ourSlider.classList.add('our-friends-slider');
@@ -61,6 +62,7 @@ nextImg.src = arrowImg;
 const ourBtn = document.createElement('a');
 ourBtn.classList.add('our-friends-btn');
 ourBtn.textContent = 'Get to know the rest';
+ourBtn.href = './pets.html';
 
 sectionOur.append(ourContainer);
 ourContainer.append(ourTitle);
