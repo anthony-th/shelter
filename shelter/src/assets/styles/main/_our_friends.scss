@@ -112,5 +112,8 @@
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.06em;
+    &:hover {
+      background: #FDDCC4;
+    }
   }
 }

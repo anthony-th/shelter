@@ -46,6 +46,10 @@ $bg-img: url(../../img/bg_main.webp);
         align-items: center;
         justify-content: center;
         letter-spacing: 0.06em;
+        cursor: pointer;
+        &:hover {
+          background: #FDDCC4;
+        }
       }
     }
   }

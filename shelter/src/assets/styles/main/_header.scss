@@ -59,8 +59,14 @@
           .links {
             user-select: none;
             color: #CDCDCD;
+            cursor: pointer;
             &:hover {
               color: #FAFAFA;
+            }
+            &:active {
+              border-bottom: 3px solid #F1CDB3;
+              padding-bottom: 3px;
+              color: #fafafa;
             }
           }
           .active-nav {
