@@ -1,0 +1,116 @@
+.our-friends-container {
+  padding: 80px 40px 100px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  .our-friends-title {
+    text-align: center;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  .our-friends-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 53px;
+    .prev-btn,
+    .next-btn {
+      width: 52px;
+      height: 52px;
+      border: 2px solid #F1CDB3;
+      border-radius: 100px;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: #FDDCC4;
+        border-color: #FDDCC4;
+      }
+    }
+    .prev-btn {
+      transform: rotate(180deg);
+    }
+    .cards {
+      display: flex;
+      gap: 90px;
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border-radius: 9px;
+        padding: 0 0 30px;
+        background: #FAFAFA;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          background: #ffffff;
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          .card__btn {
+            background-color: #FDDCC4;
+            border-color: #FDDCC4;
+            cursor: pointer;
+          }
+        }
+        .card__img {
+          width: 270px;
+          height: 270px;
+          border-radius: 9px 9px 0px 0px;
+        }
+        .card__subtitle {
+          font-family: 'Georgia';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 110%;
+          color: #545454;
+        }
+        .card__btn {
+          background: #FAFAFA;
+          width: 187px;
+          height: 52px;
+          border: 2px solid #F1CDB3;
+          border-radius: 100px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Georgia';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 130%;
+          color: #292929;
+          letter-spacing: 0.06em;
+        }
+      }
+    }
+  }
+  .our-friends-btn {
+    cursor: pointer;
+    width: 261px;
+    height: 52px;
+    background: #F1CDB3;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+  }
+}

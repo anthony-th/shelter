@@ -13,6 +13,7 @@ $bg-img: url(../../img/bg_main.webp);
       flex-direction: column;
       gap: 42px;
       padding: 163px 0 0;
+      max-width: 460px;
       .textblock__title {
         font-family: 'Georgia';
         font-style: normal;

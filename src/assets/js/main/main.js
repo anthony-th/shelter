@@ -1,6 +1,6 @@
 import { sectionNotOnly } from './section_not_only';
 import { sectionAbout } from './section_about';
-// import { sectionNotOnly } from './section_our_friends';
+import { sectionOur } from './section_our_friends';
 // import { sectionNotOnly } from './section_how_you';
 // import { sectionNotOnly } from './section_you_can';
 
@@ -9,4 +9,5 @@ main.classList.add('main');
 
 main.append(sectionNotOnly);
 main.append(sectionAbout);
+main.append(sectionOur);
 
