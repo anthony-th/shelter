@@ -17,13 +17,29 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.webp$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            limit: 8192,
+            name: '[name].[ext]',
+            outputPath: 'images',
+            mimetype: 'image/webp',
+          },
+        },
+      },
     ]
   },
   plugins: [

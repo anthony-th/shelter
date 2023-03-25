@@ -16,7 +16,8 @@ notOnlyBtn.textContent = 'Make a friend';
 notOnlyBtn.href = '#friends';
 const imgOnly = document.createElement('img');
 imgOnly.classList.add('not-only-pet');
-imgOnly.src = 'images/start-screen-puppy.webp';
+import puppyImg from '../../img/start-screen-puppy.webp';
+imgOnly.src = puppyImg;
 
 sectionNotOnly.append(notOnlyContainer);
 notOnlyContainer.append(notOnlyTextBlock);
