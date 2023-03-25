@@ -25,21 +25,23 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
+        }
       },
-      {
-        test: /\.webp$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            limit: 8192,
-            name: '[name].[ext]',
-            outputPath: 'images',
-            mimetype: 'image/webp',
-          },
-        },
-      },
+      // {
+      //   test: /\.webp$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name].[ext]',
+      //       outputPath: 'images',
+      //       mimetype: 'image/webp',
+      //     },
+      //   },
+      // },
     ]
   },
   plugins: [

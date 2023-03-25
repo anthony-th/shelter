@@ -1,0 +1,51 @@
+$bg-img: url(../../img/bg_main.webp);
+
+.not-only-block {
+  background: $bg-img, radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  .not-only-container {
+    margin: 0 auto;
+    padding: 180px 40px 0;
+    max-width: 1280px;
+    display: flex;
+    gap: 42px;
+    .not-only-textblock {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      padding: 163px 0 0;
+      .textblock__title {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 130%;
+        color: #FFFFFF;
+        max-width: 310px;
+      }
+      .textblock__description {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color: #CDCDCD;
+      }
+      .textblock__button {
+        background: #F1CDB3;
+        border-radius: 100px;
+        width: 207px;
+        height: 52px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 130%;
+        color: #292929;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.06em;
+      }
+    }
+  }
+}

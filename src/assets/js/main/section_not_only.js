@@ -1,3 +1,5 @@
+import '../../styles/main/_not_only.scss';
+
 export const sectionNotOnly = document.createElement('section');
 sectionNotOnly.classList.add('not-only-block');
 const notOnlyContainer = document.createElement('div');
