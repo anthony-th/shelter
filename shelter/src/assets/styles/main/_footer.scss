@@ -8,10 +8,10 @@ $bg-img: url(../../img/bg_main.webp);
     max-width: 1280px;
     gap: 160px;
     display: flex;
+    align-items: end;
     .contacts {
       padding: 16px 0 60px;
       max-width: 278px;
-      max-height: 234px;
       display: flex;
       flex-direction: column;
       gap: 43px;
