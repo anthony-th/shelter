@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
+  mode: 'development',
   entry: {
     index: './src/assets/js/index.js',
     pets: './src/assets/js/pets.js'
@@ -31,17 +32,6 @@ module.exports = {
           filename: 'images/[name][ext]'
         }
       },
-      // {
-      //   test: /\.webp$/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {
-      //       name: '[name].[ext]',
-      //       outputPath: 'images',
-      //       mimetype: 'image/webp',
-      //     },
-      //   },
-      // },
     ]
   },
   plugins: [
