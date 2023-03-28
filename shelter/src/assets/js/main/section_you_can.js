@@ -31,11 +31,6 @@ youCanCardText.classList.add('you-can-card-text');
 youCanCardText.textContent = 'Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.';
 
 sectionYouCan.append(youCanContainer);
-youCanContainer.append(youCanImg);
-youCanContainer.append(youCanBlock);
-youCanBlock.append(youCanCardTitle);
-youCanBlock.append(youCanCardSubtitle);
-youCanBlock.append(youCanCard);
-youCanCard.append(youCanCardImg);
-youCanCard.append(youCardTitle);
-youCanBlock.append(youCanCardText);
+youCanContainer.append(youCanImg, youCanBlock);
+youCanBlock.append(youCanCardTitle, youCanCardSubtitle, youCanCard, youCanCardText);
+youCanCard.append(youCanCardImg, youCardTitle);

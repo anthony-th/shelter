@@ -21,10 +21,6 @@ const aboutText2 = document.createElement('p');
 aboutText2.classList.add('about__text');
 aboutText2.textContent = 'We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.';
 
-
 sectionAbout.append(aboutContainer);
-aboutContainer.append(aboutImg);
-aboutContainer.append(aboutBlock);
-aboutBlock.append(aboutTitle);
-aboutBlock.append(aboutText1);
-aboutBlock.append(aboutText2);
+aboutContainer.append(aboutImg, aboutBlock);
+aboutBlock.append(aboutTitle, aboutText1, aboutText2);

@@ -22,8 +22,5 @@ imgOnly.classList.add('not-only-pet');
 imgOnly.src = puppyImg;
 
 sectionNotOnly.append(notOnlyContainer);
-notOnlyContainer.append(notOnlyTextBlock);
-notOnlyTextBlock.append(notOnlyTitle);
-notOnlyTextBlock.append(notOnlyText);
-notOnlyTextBlock.append(notOnlyBtn);
-notOnlyContainer.append(imgOnly);
+notOnlyContainer.append(notOnlyTextBlock, imgOnly);
+notOnlyTextBlock.append(notOnlyTitle, notOnlyText, notOnlyBtn);
