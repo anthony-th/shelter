@@ -1,70 +1,73 @@
-.you-can-container {
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 80px 182px 100px 183px;
-  display: flex;
-  gap: 30px;
-  .you-can-img {
-    padding: 11px 0 0;
-    opacity: 0.8;
-    width: 505px;
-    height: 271px;
-  }
-  .you-can-block {
+.you-can {
+  background: #F6F6F6;
+  .you-can-container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 80px 182px 100px 183px;
     display: flex;
-    flex-direction: column;
-    gap: 19px;
-    opacity: 0.8;
-    max-width: 380px;
-    max-height: 282px;
-    .you-can-title {
-      font-family: 'Georgia';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 35px;
-      line-height: 130%;
-      letter-spacing: 0.06em;
-      color: #545454;
+    gap: 30px;
+    .you-can-img {
+      padding: 11px 0 0;
+      opacity: 0.8;
+      width: 505px;
+      height: 271px;
     }
-    .you-can-subtitle {
-      font-family: 'Georgia';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 110%;
-      letter-spacing: 0.06em;
-      color: #545454;
-    }
-    .you-can-card {
-      background: #F1CDB3;
-      border-radius: 9px;
-      max-width: 349px;
-      height: 43px;
+    .you-can-block {
       display: flex;
-      align-items: center;
-      padding: 9px 15px;
-      gap: 15px;
-      cursor: pointer;
-      &:hover {
-        background: #FDDCC4;
-      }
-      .you-can-card-title {
+      flex-direction: column;
+      gap: 19px;
+      opacity: 0.8;
+      max-width: 380px;
+      max-height: 282px;
+      .you-can-title {
         font-family: 'Georgia';
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 115%;
+        font-size: 35px;
+        line-height: 130%;
         letter-spacing: 0.06em;
         color: #545454;
       }
-    }
-    .you-can-card-text {
-      font-family: 'Arial';
-      font-style: italic;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 18px;
-      color: #B2B2B2;
+      .you-can-subtitle {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #545454;
+      }
+      .you-can-card {
+        background: #F1CDB3;
+        border-radius: 9px;
+        max-width: 349px;
+        height: 43px;
+        display: flex;
+        align-items: center;
+        padding: 9px 15px;
+        gap: 15px;
+        cursor: pointer;
+        &:hover {
+          background: #FDDCC4;
+        }
+        .you-can-card-title {
+          font-family: 'Georgia';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 115%;
+          letter-spacing: 0.06em;
+          color: #545454;
+        }
+      }
+      .you-can-card-text {
+        font-family: 'Arial';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #B2B2B2;
+      }
     }
   }
 }
