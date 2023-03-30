@@ -21,9 +21,9 @@
     }
     .our-friends-slider {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 53px;
+      width: 100%;
       .prev-btn,
       .next-btn {
         width: 52px;

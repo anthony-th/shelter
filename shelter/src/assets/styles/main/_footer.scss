@@ -6,7 +6,7 @@ $bg-img: url(../../img/bg_main.webp);
     padding: 40px 40px 0;
     margin: 0 auto;
     max-width: 1280px;
-    gap: 160px;
+    justify-content: space-between;
     display: flex;
     align-items: end;
     .contacts {
