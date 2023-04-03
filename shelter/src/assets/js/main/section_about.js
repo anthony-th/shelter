@@ -1,4 +1,3 @@
-import '../../styles/main/_about.scss';
 import aboutImgSrc from '../../img/about-the-shelter.webp';
 
 export const sectionAbout = document.createElement('section');

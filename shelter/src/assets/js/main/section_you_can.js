@@ -1,4 +1,3 @@
-import '../../styles/main/_you_can.scss';
 import youCanImgSrc from '../../img/youCan.webp';
 import youCanCardImgSrc from '../../svg/credit-card.svg';
 

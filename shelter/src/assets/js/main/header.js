@@ -1,5 +1,3 @@
-import '../../styles/main/_header.scss';
-
 export const header = document.createElement('header');
 header.classList.add('header');
 const headerContainer = document.createElement('div');

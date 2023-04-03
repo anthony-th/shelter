@@ -1,4 +1,3 @@
-import '../../styles/main/_our_friends.scss';
 import arrowImg from '../../svg/arrow.svg';
 import cardImg1 from '../../img/katrine.webp';
 import cardImg2 from '../../img/jennifer.webp';

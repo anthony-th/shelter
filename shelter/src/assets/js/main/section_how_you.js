@@ -1,4 +1,3 @@
-import '../../styles/main/_how_you.scss';
 import howImg1Src from '../../svg/icon-pet-food.svg';
 import howImg2Src from '../../svg/icon-transportation.svg';
 import howImg3Src from '../../svg/icon-toys.svg';

@@ -1,4 +1,3 @@
-import '../../styles/main/_footer.scss';
 import emailImgSrc from '../../svg/mail.svg';
 import phoneImgSrc from '../../svg/phone.svg';
 import locationImgSrc from '../../svg/pin.svg';

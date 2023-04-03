@@ -1,32 +1,26 @@
-.header {
+.pets-header {
   margin: 0 auto;
-  position: relative;
   max-width: 1280px;
-  .header__container {
-    padding: 60px 40px 0;
-    height: 60px;
-    width: 100%;
+  .pets-header__container {
+    padding: 30px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    .logo {
+    .pets-logo {
+      width: 184px;
+      height: 60px;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       align-items: center;
-      width: 184px;
-      height: 60px;
       &:hover {
-        .logo__title {
-          color: #FFFFFF;
-        }
-        .logo__subtitle {
-          color: #F1CDB3;
+        .pets-logo__title,
+        .pets-logo__subtitle {
+          color: #292929;
         }
       }
-      .logo__title {
-        color: #F1CDB3;
+      .pets-logo__title {
+        color: #545454;
         font-size: 32px;
         line-height: 35px;
         font-family: 'Georgia';
@@ -35,44 +29,44 @@
         letter-spacing: 0.06em;
         white-space: nowrap;
       }
-      .logo__subtitle {
+      .pets-logo__subtitle {
         font-family: 'Arial';
         font-weight: 400;
         font-style: normal;
-        color: #FFFFFF;
+        color: #292929;
         letter-spacing: 0.1em;
         line-height: 15px;
         font-size: 13px;
       }
     }
-    .nav {
-      .nav__list {
+    .pets-nav {
+      .pets-nav__list {
         display: flex;
         gap: 35px;
-        .nav__item {
+        .pets-nav__item {
           list-style-type: none;
           font-family: 'Arial';
           font-style: normal;
           font-weight: 400;
           font-size: 15px;
           line-height: 160%;
-          .links {
+          .pets-links {
             user-select: none;
-            color: #CDCDCD;
+            color: #545454;
             cursor: pointer;
             &:hover {
-              color: #FAFAFA;
+              color: #292929;
             }
             &:active {
               border-bottom: 3px solid #F1CDB3;
               padding-bottom: 3px;
-              color: #fafafa;
+              color: #292929;
             }
           }
-          .active-nav {
+          .pets-active-nav {
             border-bottom: 3px solid #F1CDB3;
             padding-bottom: 3px;
-            color: #fafafa;
+            color: #292929;
             cursor: default;
           }
         }
@@ -80,4 +74,3 @@
     }
   }
 }
-

@@ -1,26 +1,32 @@
 .header {
   margin: 0 auto;
+  position: relative;
   max-width: 1280px;
   .header__container {
-    padding: 30px 40px;
+    padding: 60px 40px 0;
+    height: 60px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
     .logo {
-      width: 184px;
-      height: 60px;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       align-items: center;
+      width: 184px;
+      height: 60px;
       &:hover {
-        .logo__title,
+        .logo__title {
+          color: #FFFFFF;
+        }
         .logo__subtitle {
-          color: #292929;
+          color: #F1CDB3;
         }
       }
       .logo__title {
-        color: #545454;
+        color: #F1CDB3;
         font-size: 32px;
         line-height: 35px;
         font-family: 'Georgia';
@@ -33,7 +39,7 @@
         font-family: 'Arial';
         font-weight: 400;
         font-style: normal;
-        color: #292929;
+        color: #FFFFFF;
         letter-spacing: 0.1em;
         line-height: 15px;
         font-size: 13px;
@@ -52,21 +58,21 @@
           line-height: 160%;
           .links {
             user-select: none;
-            color: #545454;
+            color: #CDCDCD;
             cursor: pointer;
             &:hover {
-              color: #292929;
+              color: #FAFAFA;
             }
             &:active {
               border-bottom: 3px solid #F1CDB3;
               padding-bottom: 3px;
-              color: #292929;
+              color: #fafafa;
             }
           }
           .active-nav {
             border-bottom: 3px solid #F1CDB3;
             padding-bottom: 3px;
-            color: #292929;
+            color: #fafafa;
             cursor: default;
           }
         }

@@ -1,4 +1,3 @@
-import '../../styles/main/_not_only.scss';
 import puppyImg from '../../img/start-screen-puppy.webp';
 
 export const sectionNotOnly = document.createElement('section');
