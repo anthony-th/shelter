@@ -41,6 +41,7 @@
       }
       @media screen and (max-width: 767px) {
         padding: 0;
+        flex-direction: column;
       }
       .pets-our-card {
         display: flex;

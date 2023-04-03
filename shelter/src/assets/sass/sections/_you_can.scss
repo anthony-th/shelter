@@ -88,9 +88,16 @@
           letter-spacing: 0.06em;
           color: $color-dark-l;
           @media screen and (max-width: 767px) {
+            font-size: 18px;
+          }
+          @media screen and (max-width: 480px) {
             font-size: 15px;
             line-height: 110%;
           }
+        }
+        @media screen and (max-width: 767px) {
+          max-width: fit-content;
+          align-self: center;
         }
       }
       .you-can-card-text {

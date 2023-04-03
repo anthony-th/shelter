@@ -17,6 +17,9 @@
       padding: 28px 10px 0;
       gap: 40px;
     }
+    @media screen and (min-width: 620px) and (max-width: 640px) {
+      gap: 40px 17px;
+    }
     .contacts {
       padding: 16px 0 60px;
       max-width: 278px;
