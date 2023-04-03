@@ -3,13 +3,32 @@
   .you-can-container {
     margin: 0 auto;
     max-width: 1280px;
-    padding: 80px 182px 100px 183px;
+    padding: 80px 0 100px;
     display: flex;
+    justify-content: center;
     gap: 30px;
+    @media screen and (max-width: 1279px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 44px 10px 42px;
+      gap: 44px;
+    }
     .you-can-img {
-      padding: 11px 0 0;
-      width: 505px;
-      height: 271px;
+      position: relative;
+      top: 10px;
+      max-width: 505px;
+      max-height: 261px;
+      @media screen and (max-width: 1279px) {
+        order: 2;
+        top: 0;
+      }
+      @media screen and (max-width: 767px) {
+        max-width: 260px;
+        max-height: 135.2px;
+      }
     }
     .you-can-block {
       display: flex;
@@ -17,6 +36,9 @@
       gap: 19px;
       max-width: 380px;
       max-height: 282px;
+      @media screen and (max-width: 767px) {
+        padding: 0 10px;
+      }
       .you-can-title {
         font-family: 'Georgia';
         font-style: normal;
@@ -25,6 +47,10 @@
         line-height: 130%;
         letter-spacing: 0.06em;
         color: $color-dark-l;
+        @media screen and (max-width: 767px) {
+          font-size: 25px;
+          text-align: center;
+        }
       }
       .you-can-subtitle {
         font-family: 'Georgia';
@@ -34,6 +60,11 @@
         line-height: 110%;
         letter-spacing: 0.06em;
         color: $color-dark-l;
+        @media screen and (max-width: 767px) {
+          line-height: 160%;
+          letter-spacing: 0;
+          text-align: center;
+        }
       }
       .you-can-card {
         background: $color-primary;
@@ -56,6 +87,10 @@
           line-height: 115%;
           letter-spacing: 0.06em;
           color: $color-dark-l;
+          @media screen and (max-width: 767px) {
+            font-size: 15px;
+            line-height: 110%;
+          }
         }
       }
       .you-can-card-text {
@@ -65,6 +100,9 @@
         font-size: 12px;
         line-height: 18px;
         color: $color-dark-m;
+        @media screen and (max-width: 767px) {
+          text-align: justify;
+        }
       }
     }
   }

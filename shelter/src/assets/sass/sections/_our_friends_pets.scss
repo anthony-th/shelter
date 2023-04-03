@@ -3,11 +3,19 @@
   .pets-our-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 80px 40px 100px;
+    padding: 80px 40px 99px;
     display: flex;
     flex-direction: column;
     gap: 45px;
     align-items: center;
+    @media screen and (max-width: 1279px) {
+      gap: 29px;
+      padding: 80px 40px 77px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 42px 10px;
+      gap: 42px;
+    }
     .pets-our-title {
       font-family: 'Georgia';
       font-style: normal;
@@ -17,6 +25,9 @@
       letter-spacing: 0.06em;
       color: $color-dark-l;
       text-align: center;
+      @media screen and (max-width: 767px) {
+        font-size: 25px;
+      }
     }
     .pets-our-cards {
       display: flex;
@@ -25,6 +36,12 @@
       flex-wrap: wrap;
       gap: 30px 40px;
       padding: 15px 0;
+      @media screen and (max-width: 1279px) {
+        padding: 0 0 10px;
+      }
+      @media screen and (max-width: 767px) {
+        padding: 0;
+      }
       .pets-our-card {
         display: flex;
         flex-direction: column;
@@ -72,12 +89,28 @@
           letter-spacing: 0.06em;
           background: transparent;
         }
+        @media screen and (max-width: 1279px) {
+          &:nth-child(7),
+          &:last-child {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 767px) {
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6) {
+            display: none;
+          }
+        }
       }
     }
     .pets-our-pagination {
       max-width: 340px;
       display: flex;
       gap: 20px;
+      @media screen and (max-width: 767px) {
+        gap: 10px;
+      }
       .pets-our-pagination-btn {
         width: 52px;
         height: 52px;

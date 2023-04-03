@@ -7,20 +7,41 @@
     justify-content: space-between;
     display: flex;
     align-items: end;
+    @media screen and (max-width: 1279px) {
+      flex-wrap: wrap;
+      padding: 30px 30px 0;
+      gap: 65px 60px;
+      justify-content: center;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 28px 10px 0;
+      gap: 40px;
+    }
     .contacts {
       padding: 16px 0 60px;
       max-width: 278px;
       display: flex;
       flex-direction: column;
       gap: 43px;
+      @media screen and (max-width: 1279px) {
+        padding: 0;
+      }
+      @media screen and (max-width: 767px) {
+        align-items: center;
+        padding: 0 10px;
+      }
       .contacts-title {
         font-family: 'Georgia';
         font-style: normal;
         font-weight: 400;
         font-size: 35px;
         line-height: 130%;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.059em;
         color: $color-light-xl;
+        @media screen and (max-width: 767px) {
+          font-size: 25px;
+          text-align: center;
+        }
       }
       .mail,
       .phone {
@@ -57,15 +78,26 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      @media screen and (max-width: 1279px) {
+        padding: 0;
+      }
+      @media screen and (max-width: 767px) {
+        gap: 40px;
+      }
       .locations-title {
         font-family: 'Georgia';
         font-style: normal;
         font-weight: 400;
         font-size: 35px;
         line-height: 130%;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.059em;
         color: $color-light-xl;
         margin-bottom: 2px;
+        @media screen and (max-width: 767px) {
+          font-size: 25px;
+          text-align: center;
+          margin-bottom: 0;
+        }
       }
       .location-boston,
       .location-london {
@@ -97,8 +129,12 @@
       }
     }
     .footer-img {
-      width: 300px;
-      height: 310px;
+      max-width: 300px;
+      max-height: 310px;
+      @media screen and (max-width: 767px) {
+        max-width: 260px;
+        max-height: 269px;
+      }
     }
   }
 }

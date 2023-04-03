@@ -7,6 +7,10 @@
   justify-content: center;
   align-items: center;
   gap: 60px;
+  @media screen and (max-width: 767px) {
+    padding: 42px 15px;
+    gap: 42px;
+  }
   .how-you-title {
     text-align: center;
     font-family: 'Georgia';
@@ -16,21 +20,50 @@
     line-height: 130%;
     letter-spacing: 0.06em;
     color: $color-dark-l;
+    @media screen and (max-width: 767px) {
+      font-size: 25px;
+    }
   }
   .how-you-icons {
     display: flex;
     flex-wrap: wrap;
     gap: 55px 120px;
     justify-content: center;
+    @media screen and (max-width: 1279px) {
+      gap: 55px 60px;
+    }
+    @media screen and (max-width: 767px) {
+      gap: 30px;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0 6%;
+    }
+    @media screen and (max-width: 360px) {
+      padding: 0;
+    }
     .icon {
       max-width: fit-content;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      @media screen and (max-width: 1279px) {
+        max-width: 170px;
+        width: 170px;
+      }
+      @media screen and (max-width: 767px) {
+        max-width: 130px;
+        width: 130px;
+        gap: 20px;
+      }
       .icon-img {
         max-width: 60px;
         max-height: 60px;
+        @media screen and (max-width: 767px) {
+          max-width: 50px;
+          max-height: 50px;
+        }
       }
       .icon-title {
         font-family: 'Georgia';
@@ -40,6 +73,10 @@
         line-height: 115%;
         letter-spacing: 0.06em;
         color: $color-dark-l;
+        @media screen and (max-width: 767px) {
+          font-size: 15px;
+          line-height: 110%;
+        }
       }
     }
   }

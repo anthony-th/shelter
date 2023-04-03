@@ -6,12 +6,26 @@
     max-width: 1280px;
     display: flex;
     gap: 42px;
+    @media screen and (max-width: 1279px) {
+      flex-direction: column;
+      padding: 150px 100px 0 99px;
+      align-items: center;
+      gap: 100px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 150px 10px 0;
+      gap: 105px;
+    }
     .not-only-textblock {
       display: flex;
       flex-direction: column;
       gap: 42px;
       padding: 163px 0 0;
       max-width: 460px;
+      @media screen and (max-width: 1279px) {
+        align-items: center;
+        padding: 0;
+      }
       .textblock__title {
         font-family: 'Georgia';
         font-style: normal;
@@ -20,6 +34,23 @@
         line-height: 130%;
         color: $color-light-xl;
         max-width: 310px;
+        @media screen and (max-width: 1279px) {
+          align-self: flex-start;
+        }
+        @media screen and (max-width: 767px) {
+          text-align: center;
+          align-self: auto;
+          font-size: 32px;
+          letter-spacing: 0.06em;
+          max-width: 300px;
+        }
+        @media screen and (max-width: 480px) {
+          text-align: center;
+          align-self: auto;
+          font-size: 25px;
+          letter-spacing: 0.06em;
+          max-width: 250px;
+        }
       }
       .textblock__description {
         font-family: 'Arial';
@@ -28,6 +59,12 @@
         font-size: 15px;
         line-height: 160%;
         color: $color-dark-s;
+        @media screen and (max-width: 1279px) {
+          align-self: flex-start;
+        }
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
       .textblock__button {
         background: $color-primary;
@@ -48,6 +85,22 @@
         &:hover {
           background: $color-primary-light;
         }
+      }
+    }
+    .not-only-pet {
+      max-width: 698px;
+      max-height: 728px;
+      @media screen and (max-width: 1279px) {
+        max-width: 569px;
+        max-height: 593px;
+        position: relative;
+        left: 70px;
+      }
+      @media screen and (max-width: 767px) {
+        max-width: 260px;
+        max-height: 271.77px;
+        position: relative;
+        left: 20px;
       }
     }
   }
