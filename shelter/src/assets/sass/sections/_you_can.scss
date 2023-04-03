@@ -8,9 +8,11 @@
     justify-content: center;
     gap: 30px;
     @media screen and (max-width: 1279px) {
+      gap: 60px;
+    }
+    @media screen and (max-width: 999px) {
       flex-direction: column;
       align-items: center;
-      gap: 60px;
     }
     @media screen and (max-width: 767px) {
       padding: 44px 10px 42px;
@@ -21,7 +23,7 @@
       top: 10px;
       max-width: 505px;
       max-height: 261px;
-      @media screen and (max-width: 1279px) {
+      @media screen and (max-width: 999px) {
         order: 2;
         top: 0;
       }

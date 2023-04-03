@@ -97,10 +97,13 @@
         left: 70px;
       }
       @media screen and (max-width: 767px) {
+        max-width: 413px;
+        max-height: 431.7px;
+        left: 20px;
+      }
+      @media screen and (max-width: 480px) {
         max-width: 260px;
         max-height: 271.77px;
-        position: relative;
-        left: 20px;
       }
     }
   }
