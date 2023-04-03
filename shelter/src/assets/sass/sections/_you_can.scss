@@ -1,5 +1,5 @@
 .you-can {
-  background: #F6F6F6;
+  background: $color-light-l;
   .you-can-container {
     margin: 0 auto;
     max-width: 1280px;
@@ -8,7 +8,6 @@
     gap: 30px;
     .you-can-img {
       padding: 11px 0 0;
-      opacity: 0.8;
       width: 505px;
       height: 271px;
     }
@@ -16,7 +15,6 @@
       display: flex;
       flex-direction: column;
       gap: 19px;
-      opacity: 0.8;
       max-width: 380px;
       max-height: 282px;
       .you-can-title {
@@ -26,7 +24,7 @@
         font-size: 35px;
         line-height: 130%;
         letter-spacing: 0.06em;
-        color: #545454;
+        color: $color-dark-l;
       }
       .you-can-subtitle {
         font-family: 'Georgia';
@@ -35,10 +33,10 @@
         font-size: 15px;
         line-height: 110%;
         letter-spacing: 0.06em;
-        color: #545454;
+        color: $color-dark-l;
       }
       .you-can-card {
-        background: #F1CDB3;
+        background: $color-primary;
         border-radius: 9px;
         max-width: 349px;
         height: 43px;
@@ -48,7 +46,7 @@
         gap: 15px;
         cursor: pointer;
         &:hover {
-          background: #FDDCC4;
+          background: $color-primary-light;
         }
         .you-can-card-title {
           font-family: 'Georgia';
@@ -57,7 +55,7 @@
           font-size: 20px;
           line-height: 115%;
           letter-spacing: 0.06em;
-          color: #545454;
+          color: $color-dark-l;
         }
       }
       .you-can-card-text {
@@ -66,7 +64,7 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 18px;
-        color: #B2B2B2;
+        color: $color-dark-m;
       }
     }
   }

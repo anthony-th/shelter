@@ -1,5 +1,5 @@
 .our-friends {
-  background: #F6F6F6;
+  background: $color-light-l;
   .our-friends-container {
     padding: 80px 40px 100px;
     max-width: 1280px;
@@ -17,7 +17,7 @@
       font-size: 35px;
       line-height: 130%;
       letter-spacing: 0.06em;
-      color: #545454;
+      color: $color-dark-l;
     }
     .our-friends-slider {
       display: flex;
@@ -28,7 +28,7 @@
       .next-btn {
         width: 52px;
         height: 52px;
-        border: 2px solid #F1CDB3;
+        border: 2px solid $color-primary;
         border-radius: 100px;
         background: transparent;
         cursor: pointer;
@@ -36,8 +36,8 @@
         align-items: center;
         justify-content: center;
         &:hover {
-          background-color: #FDDCC4;
-          border-color: #FDDCC4;
+          background-color: $color-primary-light;
+          border-color: $color-primary-light;
         }
       }
       .prev-btn {
@@ -52,15 +52,15 @@
           gap: 30px;
           border-radius: 9px;
           padding: 0 0 30px;
-          background: #FAFAFA;
+          background: $color-light-s;
           align-items: center;
           cursor: pointer;
           &:hover {
             background: #ffffff;
             box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
             .card__btn {
-              background-color: #FDDCC4;
-              border-color: #FDDCC4;
+              background-color: $color-primary-light;
+              border-color: $color-primary-light;
               cursor: pointer;
             }
           }
@@ -75,13 +75,13 @@
             font-weight: 400;
             font-size: 20px;
             line-height: 110%;
-            color: #545454;
+            color: $color-dark-l;
           }
           .card__btn {
-            background: #FAFAFA;
+            background: $color-light-s;
             width: 187px;
             height: 52px;
-            border: 2px solid #F1CDB3;
+            border: 2px solid $color-primary;
             border-radius: 100px;
             display: flex;
             flex-direction: column;
@@ -92,7 +92,7 @@
             font-weight: 400;
             font-size: 17px;
             line-height: 130%;
-            color: #292929;
+            color: $color-dark-3xl;
             letter-spacing: 0.06em;
           }
         }
@@ -102,12 +102,12 @@
       cursor: pointer;
       width: 261px;
       height: 52px;
-      background: #F1CDB3;
+      background: $color-primary;
       border-radius: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #292929;
+      color: $color-dark-3xl;
       font-family: 'Georgia';
       font-style: normal;
       font-weight: 400;
@@ -115,7 +115,7 @@
       line-height: 130%;
       letter-spacing: 0.06em;
       &:hover {
-        background: #FDDCC4;
+        background: $color-primary-light;
       }
     }
   }

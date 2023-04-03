@@ -1,5 +1,7 @@
-@import 'core/font';
-@import 'core/reset';
+@import 'base/variables';
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/base';
 
 @import './layout/header';
 @import './layout/header_pets';

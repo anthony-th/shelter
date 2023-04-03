@@ -19,14 +19,14 @@
       height: 60px;
       &:hover {
         .logo__title {
-          color: #FFFFFF;
+          color: $color-light-l;
         }
         .logo__subtitle {
-          color: #F1CDB3;
+          color: $color-primary;
         }
       }
       .logo__title {
-        color: #F1CDB3;
+        color: $color-primary;
         font-size: 32px;
         line-height: 35px;
         font-family: 'Georgia';
@@ -39,7 +39,7 @@
         font-family: 'Arial';
         font-weight: 400;
         font-style: normal;
-        color: #FFFFFF;
+        color: $color-light-l;
         letter-spacing: 0.1em;
         line-height: 15px;
         font-size: 13px;
@@ -58,21 +58,21 @@
           line-height: 160%;
           .links {
             user-select: none;
-            color: #CDCDCD;
+            color: $color-dark-s;
             cursor: pointer;
             &:hover {
-              color: #FAFAFA;
+              color: $color-light-s;
             }
             &:active {
-              border-bottom: 3px solid #F1CDB3;
+              border-bottom: 3px solid $color-primary;
               padding-bottom: 3px;
-              color: #fafafa;
+              color: $color-light-s;
             }
           }
           .active-nav {
-            border-bottom: 3px solid #F1CDB3;
+            border-bottom: 3px solid $color-primary;
             padding-bottom: 3px;
-            color: #fafafa;
+            color: $color-light-s;
             cursor: default;
           }
         }

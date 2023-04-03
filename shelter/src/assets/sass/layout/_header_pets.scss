@@ -16,11 +16,11 @@
       &:hover {
         .pets-logo__title,
         .pets-logo__subtitle {
-          color: #292929;
+          color: $color-dark-3xl;
         }
       }
       .pets-logo__title {
-        color: #545454;
+        color: $color-dark-l;
         font-size: 32px;
         line-height: 35px;
         font-family: 'Georgia';
@@ -33,7 +33,7 @@
         font-family: 'Arial';
         font-weight: 400;
         font-style: normal;
-        color: #292929;
+        color: $color-dark-3xl;
         letter-spacing: 0.1em;
         line-height: 15px;
         font-size: 13px;
@@ -52,21 +52,21 @@
           line-height: 160%;
           .pets-links {
             user-select: none;
-            color: #545454;
+            color: $color-dark-l;
             cursor: pointer;
             &:hover {
-              color: #292929;
+              color: $color-dark-3xl;
             }
             &:active {
-              border-bottom: 3px solid #F1CDB3;
+              border-bottom: 3px solid $color-primary;
               padding-bottom: 3px;
-              color: #292929;
+              color: $color-dark-3xl;
             }
           }
           .pets-active-nav {
-            border-bottom: 3px solid #F1CDB3;
+            border-bottom: 3px solid $color-primary;
             padding-bottom: 3px;
-            color: #292929;
+            color: $color-dark-3xl;
             cursor: default;
           }
         }
