@@ -8,13 +8,15 @@
     flex-direction: column;
     gap: 45px;
     align-items: center;
-    @media screen and (max-width: 1279px) {
-      gap: 29px;
-      padding: 80px 40px 77px;
-    }
-    @media screen and (max-width: 767px) {
-      padding: 42px 10px;
-      gap: 42px;
+    @media screen {
+      @media (max-width: 1279px) {
+        gap: 29px;
+        padding: 80px 40px 77px;
+      }
+      @media (max-width: 767px) {
+        padding: 42px 10px;
+        gap: 42px;
+      }
     }
     .pets-our-title {
       font-family: 'Georgia';
@@ -36,12 +38,14 @@
       flex-wrap: wrap;
       gap: 30px 40px;
       padding: 15px 0;
-      @media screen and (max-width: 1279px) {
-        padding: 0 0 10px;
-      }
-      @media screen and (max-width: 767px) {
-        padding: 0;
-        flex-direction: column;
+      @media screen {
+        @media (max-width: 1279px) {
+          padding: 0 0 10px;
+        }
+        @media (max-width: 767px) {
+          padding: 0;
+          flex-direction: column;
+        }
       }
       .pets-our-card {
         display: flex;
@@ -90,19 +94,21 @@
           letter-spacing: 0.06em;
           background: transparent;
         }
-        @media screen and (max-width: 1279px) {
-          &:nth-child(7),
-          &:last-child {
-            display: none;
+        @media screen {
+          @media (max-width: 1279px) {
+            &:nth-child(7),
+            &:last-child {
+              display: none;
+          }
+          @media (max-width: 767px) {
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+              display: none;
+            }
           }
         }
-        @media screen and (max-width: 767px) {
-          &:nth-child(4),
-          &:nth-child(5),
-          &:nth-child(6) {
-            display: none;
-          }
-        }
+       }
       }
     }
     .pets-our-pagination {

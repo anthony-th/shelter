@@ -7,20 +7,24 @@
     justify-content: space-between;
     display: flex;
     align-items: end;
-    @media screen and (max-width: 1279px) {
-      flex-wrap: wrap;
-      gap: 65px 60px;
-      justify-content: center;
-    }
-    @media screen and (max-width: 1060px) {
-      padding: 30px 30px 0;
-    }
-    @media screen and (max-width: 767px) {
-      padding: 28px 10px 0;
-      gap: 40px;
-    }
-    @media screen and (min-width: 620px) and (max-width: 640px) {
-      gap: 40px 17px;
+    @media screen {
+      @media (max-width: 1279px) {
+        flex-wrap: wrap;
+        gap: 65px 60px;
+        justify-content: center;
+      }
+      @media (max-width: 1060px) {
+        padding: 30px 30px 0;
+      }
+      @media (max-width: 767px) {
+        padding: 28px 10px 0;
+        gap: 40px;
+      }
+      @media (min-width: 620px) {
+        @media (max-width: 640px) {
+          gap: 40px 17px;
+        }
+      }
     }
     .contacts {
       padding: 16px 0 60px;
@@ -28,12 +32,14 @@
       display: flex;
       flex-direction: column;
       gap: 43px;
-      @media screen and (max-width: 1060px) {
-        padding: 0;
-      }
-      @media screen and (max-width: 767px) {
-        align-items: center;
-        padding: 0 10px;
+      @media screen {
+        @media (max-width: 1060px) {
+          padding: 0;
+        }
+        @media (max-width: 767px) {
+          align-items: center;
+          padding: 0 10px;
+        }
       }
       .contacts-title {
         font-family: 'Georgia';
@@ -83,11 +89,13 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
-      @media screen and (max-width: 1060px) {
-        padding: 0;
-      }
-      @media screen and (max-width: 767px) {
-        gap: 40px;
+      @media screen {
+        @media (max-width: 1060px) {
+          padding: 0;
+        }
+        @media (max-width: 767px) {
+          gap: 40px;
+        }
       }
       .locations-title {
         font-family: 'Georgia';

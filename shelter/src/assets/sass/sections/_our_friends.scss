@@ -9,12 +9,14 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
-    @media screen and (max-width: 1279px) {
-      padding: 80px 30px 100px;
-    }
-    @media screen and (max-width: 767px) {
-      padding: 40px 10px 42px;
-      gap: 42px;
+    @media screen {
+      @media (max-width: 1279px) {
+        padding: 80px 30px 100px;
+      }
+      @media (max-width: 767px) {
+        padding: 40px 10px 42px;
+        gap: 42px;
+      }
     }
     .our-friends-title {
       text-align: center;
@@ -35,14 +37,16 @@
       align-items: center;
       width: 100%;
       gap: 53px;
-      @media screen and (max-width: 1279px) {
-        gap: 12px;
-      }
-      @media screen and (max-width: 767px) {
-        flex-wrap: wrap;
-        gap: 20px 80px;
-        order: 1;
-        max-width: 300px;
+      @media screen {
+        @media (max-width: 1279px) {
+          gap: 12px;
+        }
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+          gap: 20px 80px;
+          order: 1;
+          max-width: 300px;
+        }
       }
       .prev-btn,
       .next-btn {
@@ -125,14 +129,16 @@
             color: $color-dark-3xl;
             letter-spacing: 0.06em;
           }
-          @media screen and (max-width: 1279px) {
-            &:nth-child(3) {
-              display: none;
+          @media screen {
+            @media (max-width: 1279px) {
+              &:nth-child(3) {
+                display: none;
+              }
             }
-          }
-          @media screen and (max-width: 767px) {
-            &:nth-child(2) {
-              display: none;
+            @media (max-width: 767px) {
+              &:nth-child(2) {
+                display: none;
+              }
             }
           }
         }

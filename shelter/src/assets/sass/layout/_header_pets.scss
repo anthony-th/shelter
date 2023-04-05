@@ -6,11 +6,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media screen and (max-width: 1279px) {
-      padding: 30px;
-    }
-    @media screen and (max-width: 767px) {
-      padding: 30px 20px;
+    @media screen {
+      @media (max-width: 1279px) {
+        padding: 30px;
+      }
+      @media (max-width: 767px) {
+        padding: 30px 20px;
+      }
     }
     .pets-logo {
       width: 184px;
