@@ -40,20 +40,37 @@ listItem4Link.href = '#contacts';
 listItem4Link.classList.add('links');
 const burgerMenu = document.createElement('div');
 burgerMenu.classList.add('burger-menu');
+burgerMenu.style.cursor = 'pointer';
 const burgerLine1 = document.createElement('hr');
 burgerLine1.classList.add('burger-line');
 const burgerLine2 = document.createElement('hr');
 burgerLine2.classList.add('burger-line');
 const burgerLine3 = document.createElement('hr');
 burgerLine3.classList.add('burger-line');
+const shadow = document.createElement('div');
+shadow.classList.add('shadow');
 
 header.append(headerContainer);
 headerContainer.append(linkLogo, nav);
 linkLogo.append(titleLogo, subtitleLogo);
-nav.append(navList, burgerMenu);
+nav.append(navList, burgerMenu, shadow);
 burgerMenu.append(burgerLine1, burgerLine2, burgerLine3);
 navList.append(listItem1, listItem2, listItem3, listItem4);
 listItem1.append(listItem1Link);
 listItem2.append(listItem2Link);
 listItem3.append(listItem3Link);
 listItem4.append(listItem4Link);
+
+burgerMenu.onclick = toggleMenu;
+listItem1Link.onclick = toggleMenu;
+listItem2Link.onclick = toggleMenu;
+listItem3Link.onclick = toggleMenu;
+listItem4Link.onclick = toggleMenu;
+shadow.onclick = toggleMenu;
+
+function toggleMenu() {
+  burgerMenu.classList.toggle('rotate');
+  navList.classList.toggle('active-menu');
+  document.body.classList.toggle('overflow-hidden');
+  shadow.classList.toggle('shadow-open');
+}
