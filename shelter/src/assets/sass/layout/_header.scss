@@ -148,12 +148,16 @@
 }
 
 .rotate {
-  transform: rotate(90deg);
-  position: fixed;
-  top: 49px;
-  right: 20px;
+  @media screen and (max-width: 767px) {
+    transform: rotate(90deg);
+    position: fixed;
+    top: 49px;
+    right: 20px;
+  }
 }
 
 .overflow-hidden {
-  overflow: hidden;
+  @media screen and (max-width: 767px) {
+    overflow: hidden;
+  }
 }
