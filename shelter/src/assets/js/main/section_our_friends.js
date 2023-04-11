@@ -1,8 +1,13 @@
 import arrowImg from '../../svg/arrow.svg';
-import cardImg1 from '../../img/katrine.webp';
-import cardImg2 from '../../img/jennifer.webp';
-import cardImg3 from '../../img/woody.webp';
-// import myData from '../pets.json';
+import katrine from '../../img/katrine.webp';
+import jennifer from '../../img/jennifer.webp';
+import woody from '../../img/woody.webp';
+import sophia from '../../img/sophia.webp';
+import timmy from '../../img/timmy.webp';
+import charly from '../../img/charly.webp';
+import scarlett from '../../img/scarlett.webp';
+import freddie from '../../img/freddie.webp';
+// import dataJson from '../pets.json';
 
 export const sectionOur = document.createElement('section');
 sectionOur.classList.add('our-friends');
@@ -25,7 +30,7 @@ const ourCard1 = document.createElement('div');
 ourCard1.classList.add('card');
 const ourCardImg1 = document.createElement('img');
 ourCardImg1.classList.add('card__img');
-ourCardImg1.src = cardImg1;
+ourCardImg1.src = katrine;
 const ourCardSubtitle1 = document.createElement('h3');
 ourCardSubtitle1.classList.add('card__subtitle');
 ourCardSubtitle1.textContent = 'Katrine';
@@ -36,7 +41,7 @@ const ourCard2 = document.createElement('div');
 ourCard2.classList.add('card');
 const ourCardImg2 = document.createElement('img');
 ourCardImg2.classList.add('card__img');
-ourCardImg2.src = cardImg2;
+ourCardImg2.src = jennifer;
 const ourCardSubtitle2 = document.createElement('h3');
 ourCardSubtitle2.classList.add('card__subtitle');
 ourCardSubtitle2.textContent = 'Jennifer';
@@ -47,7 +52,7 @@ const ourCard3 = document.createElement('div');
 ourCard3.classList.add('card');
 const ourCardImg3 = document.createElement('img');
 ourCardImg3.classList.add('card__img');
-ourCardImg3.src = cardImg3;
+ourCardImg3.src = woody;
 const ourCardSubtitle3 = document.createElement('h3');
 ourCardSubtitle3.classList.add('card__subtitle');
 ourCardSubtitle3.textContent = 'Woody';
@@ -74,15 +79,3 @@ ourCard2.append(ourCardImg2, ourCardSubtitle2, ourCardBtn2);
 ourCard3.append(ourCardImg3, ourCardSubtitle3, ourCardBtn3);
 ourNextBtn.append(nextImg);
 ourContainer.append(ourBtn);
-
-// async function loadData() {
-//   const response = await fetch(myData);
-//   const data = await response.json();
-//   createCards(data);
-// }
-
-// function createCards(data) {
-//   console.log(data);
-// }
-
-// loadData();

@@ -1,11 +1,3 @@
-import katrine from '../../img/katrine.webp';
-import jennifer from '../../img/jennifer.webp';
-import woody from '../../img/woody.webp';
-import sophia from '../../img/sophia.webp';
-import timmy from '../../img/timmy.webp';
-import charly from '../../img/charly.webp';
-import scarlett from '../../img/scarlett.webp';
-import freddie from '../../img/freddie.webp';
 import dataJson from '../pets.json';
 
 export const sectionOur = document.createElement('section');
@@ -18,19 +10,62 @@ ourTitle.innerHTML = `Our friends who<br>are looking for a house`;
 const ourCards = document.createElement('div');
 ourCards.classList.add('pets-our-cards');
 
+let currentPage = 1;
+let totalPages;
+
 fetch(dataJson)
   .then(response => response.json())
   .then(data => {
-    const shuffledData = data.sort(() => Math.random() - 0.5).slice(0, 8);
-    const ourCard1 = createCard(shuffledData[0]);
-    const ourCard2 = createCard(shuffledData[1]);
-    const ourCard3 = createCard(shuffledData[2]);
-    const ourCard4 = createCard(shuffledData[3]);
-    const ourCard5 = createCard(shuffledData[4]);
-    const ourCard6 = createCard(shuffledData[5]);
-    const ourCard7 = createCard(shuffledData[6]);
-    const ourCard8 = createCard(shuffledData[7]);
-    ourCards.append(ourCard1, ourCard2, ourCard3, ourCard4, ourCard5, ourCard6, ourCard7, ourCard8);
+    const repeatedData = data.flatMap(pet => Array(6).fill(pet));
+    const uniqueIds = [...new Set(repeatedData.map(pet => pet.name))];
+    const shuffledData = Array(6).fill().map(() => {
+      const shuffledCards = uniqueIds
+        .map(id => repeatedData.find(pet => pet.name === id))
+        .sort(() => Math.random() - 0.5);
+      return shuffledCards;
+    });
+
+    console.log(shuffledData);
+    totalPages = Math.ceil(repeatedData.length / 8);
+    
+    ourPaginationBtn1.onclick = () => {
+      currentPage = 1;
+      updatePagination(currentPage, totalPages)
+      updateCardsAndPagination(currentPage);
+    };
+
+    ourPaginationBtn2.onclick = () => {
+      currentPage = currentPage - 1;
+      if (currentPage > totalPages) {
+        currentPage = totalPages;
+      }
+      updatePagination(currentPage, totalPages)
+      updateCardsAndPagination(currentPage);
+    };
+
+    ourPaginationBtn4.onclick = () => {
+      currentPage = currentPage + 1;
+      if (currentPage > totalPages) {
+        currentPage = totalPages;
+      }
+      updatePagination(currentPage, totalPages)
+      updateCardsAndPagination(currentPage);
+    };
+
+    ourPaginationBtn5.onclick = () => {
+      currentPage = totalPages;
+      updatePagination(currentPage, totalPages)
+      updateCardsAndPagination(currentPage);
+    };
+
+    function updateCardsAndPagination(currentPage) {
+      ourCards.innerHTML = '';
+      const cards = shuffledData[currentPage - 1].map(pet => createCard(pet));
+      cards.forEach(card => ourCards.append(card));
+    }
+
+    updateCardsAndPagination(1);
+    updatePagination(currentPage, totalPages);
   });
 
 function createCard(pet) {
@@ -55,22 +90,45 @@ function createCard(pet) {
 const ourPagination = document.createElement('div');
 ourPagination.classList.add('pets-our-pagination');
 const ourPaginationBtn1 = document.createElement('button');
-ourPaginationBtn1.classList.add('pets-our-pagination-btn', 'pets-disabled');
+ourPaginationBtn1.classList.add('pets-our-pagination-btn');
 ourPaginationBtn1.textContent = '<<';
-ourPaginationBtn1.disabled = 'true';
 const ourPaginationBtn2 = document.createElement('button');
-ourPaginationBtn2.classList.add('pets-our-pagination-btn', 'pets-disabled');
+ourPaginationBtn2.classList.add('pets-our-pagination-btn');
 ourPaginationBtn2.textContent = '<';
-ourPaginationBtn2.disabled = 'true';
 const ourPaginationBtn3 = document.createElement('button');
 ourPaginationBtn3.classList.add('pets-our-pagination-btn', 'pets-pagination-btn-active');
-ourPaginationBtn3.textContent = '1';
 const ourPaginationBtn4 = document.createElement('button');
 ourPaginationBtn4.classList.add('pets-our-pagination-btn');
 ourPaginationBtn4.textContent = '>';
 const ourPaginationBtn5 = document.createElement('button');
 ourPaginationBtn5.classList.add('pets-our-pagination-btn');
 ourPaginationBtn5.textContent = '>>';
+
+function updatePagination(currentPage, totalPages) {
+  ourPaginationBtn3.textContent = currentPage;
+  if (currentPage === 1) {
+    ourPaginationBtn1.classList.add('pets-disabled');
+    ourPaginationBtn2.classList.add('pets-disabled');
+    ourPaginationBtn1.disabled = true;
+    ourPaginationBtn2.disabled = true;
+  } else {
+    ourPaginationBtn1.classList.remove('pets-disabled');
+    ourPaginationBtn2.classList.remove('pets-disabled');
+    ourPaginationBtn1.disabled = false;
+    ourPaginationBtn2.disabled = false;
+  }
+  if (currentPage === totalPages) {
+    ourPaginationBtn4.classList.add('pets-disabled');
+    ourPaginationBtn5.classList.add('pets-disabled');
+    ourPaginationBtn4.disabled = true;
+    ourPaginationBtn5.disabled = true;
+  } else {
+    ourPaginationBtn4.classList.remove('pets-disabled');
+    ourPaginationBtn5.classList.remove('pets-disabled');
+    ourPaginationBtn4.disabled = false;
+    ourPaginationBtn5.disabled = false;
+  }
+}
 
 sectionOur.append(ourContainer);
 ourContainer.append(ourTitle, ourCards, ourPagination);
