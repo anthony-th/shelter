@@ -2,6 +2,7 @@ import arrowImg from '../../svg/arrow.svg';
 import cardImg1 from '../../img/katrine.webp';
 import cardImg2 from '../../img/jennifer.webp';
 import cardImg3 from '../../img/woody.webp';
+// import myData from '../pets.json';
 
 export const sectionOur = document.createElement('section');
 sectionOur.classList.add('our-friends');
@@ -73,3 +74,15 @@ ourCard2.append(ourCardImg2, ourCardSubtitle2, ourCardBtn2);
 ourCard3.append(ourCardImg3, ourCardSubtitle3, ourCardBtn3);
 ourNextBtn.append(nextImg);
 ourContainer.append(ourBtn);
+
+// async function loadData() {
+//   const response = await fetch(myData);
+//   const data = await response.json();
+//   createCards(data);
+// }
+
+// function createCards(data) {
+//   console.log(data);
+// }
+
+// loadData();
