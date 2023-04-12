@@ -110,6 +110,9 @@ function processData() {
 function createCard(pet) {
   const card = document.createElement('div');
   card.classList.add('pets-our-card');
+  card.addEventListener('click', () => {
+    openModal(pet);
+  });
   const cardImg = document.createElement('img');
   cardImg.classList.add('pets-our-card-img');
   cardImg.src = pet.img;
@@ -124,6 +127,58 @@ function createCard(pet) {
   cardBtn.textContent = 'Learn more';
   card.append(cardBtn);
   return card;
+}
+
+export function openModal(pet) {
+  const shadow = document.createElement('div');
+  shadow.classList.add('modal-shadow');
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  const modalImg = document.createElement('img');
+  modalImg.classList.add('modal-img');
+  modalImg.src = pet.img;
+  const modalCancel = document.createElement('button');
+  modalCancel.classList.add('modal-cancel');
+  const modalSvg = document.createElement('img');
+  modalSvg.classList.add('modal-svg');
+  modalSvg.src = './images/cancel.svg';
+  const modalBlock = document.createElement('div');
+  modalBlock.classList.add('modal-block');
+  const modalTitle = document.createElement('h2');
+  modalTitle.classList.add('modal-title');
+  modalTitle.textContent = pet.name;
+  const modalSubtitle = document.createElement('h3');
+  modalSubtitle.classList.add('modal-subtitle');
+  modalSubtitle.textContent = `${pet.type} - ${pet.breed}`;
+  const modalDescription = document.createElement('p');
+  modalDescription.classList.add('modal-description');
+  modalDescription.textContent = pet.description;
+  const modalTextList = document.createElement('ul');
+  modalTextList.classList.add('modal-text-block');
+  const modalTextAge = document.createElement('li');
+  modalTextAge.classList.add('modal-info');
+  modalTextAge.innerHTML = `<b>Age:</b> ${pet.age}`;
+  const modalTextInoculations = document.createElement('li');
+  modalTextInoculations.classList.add('modal-info');
+  modalTextInoculations.innerHTML = `<b>Inoculations:</b> ${pet.inoculations}`;
+  const modalTextDiseases = document.createElement('li');
+  modalTextDiseases.classList.add('modal-info');
+  modalTextDiseases.innerHTML = `<b>Diseases:</b> ${pet.diseases}`;
+  const modalTextParasites = document.createElement('li');
+  modalTextParasites.classList.add('modal-info');
+  modalTextParasites.innerHTML = `<b>Parasites:</b> ${pet.parasites}`;
+  modalTextList.append(modalTextAge, modalTextInoculations, modalTextDiseases, modalTextParasites);
+  modalBlock.append(modalTitle, modalSubtitle, modalDescription, modalTextList);
+  modalCancel.append(modalSvg);
+  modal.append(modalImg, modalCancel, modalBlock);
+  ourCards.append(modal);
+  document.body.append(shadow);
+  modalCancel.onclick = removeAll; 
+  shadow.onclick = removeAll; 
+  function removeAll() {
+    modal.remove();
+    shadow.remove();
+  }
 }
 
 const ourPagination = document.createElement('div');
