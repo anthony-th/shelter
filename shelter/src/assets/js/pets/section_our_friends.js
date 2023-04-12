@@ -11,62 +11,101 @@ const ourCards = document.createElement('div');
 ourCards.classList.add('pets-our-cards');
 
 let currentPage = 1;
-let totalPages;
+let totalPages = 6;
+let data;
+let resizeTimer;
 
-fetch(dataJson)
-  .then(response => response.json())
-  .then(data => {
-    const repeatedData = data.flatMap(pet => Array(6).fill(pet));
-    const uniqueIds = [...new Set(repeatedData.map(pet => pet.name))];
-    const shuffledData = Array(6).fill().map(() => {
-      const shuffledCards = uniqueIds
-        .map(id => repeatedData.find(pet => pet.name === id))
-        .sort(() => Math.random() - 0.5);
-      return shuffledCards;
-    });
-
-    console.log(shuffledData);
-    totalPages = Math.ceil(repeatedData.length / 8);
-    
-    ourPaginationBtn1.onclick = () => {
-      currentPage = 1;
-      updatePagination(currentPage, totalPages)
-      updateCardsAndPagination(currentPage);
-    };
-
-    ourPaginationBtn2.onclick = () => {
-      currentPage = currentPage - 1;
-      if (currentPage > totalPages) {
-        currentPage = totalPages;
-      }
-      updatePagination(currentPage, totalPages)
-      updateCardsAndPagination(currentPage);
-    };
-
-    ourPaginationBtn4.onclick = () => {
-      currentPage = currentPage + 1;
-      if (currentPage > totalPages) {
-        currentPage = totalPages;
-      }
-      updatePagination(currentPage, totalPages)
-      updateCardsAndPagination(currentPage);
-    };
-
-    ourPaginationBtn5.onclick = () => {
-      currentPage = totalPages;
-      updatePagination(currentPage, totalPages)
-      updateCardsAndPagination(currentPage);
-    };
-
-    function updateCardsAndPagination(currentPage) {
-      ourCards.innerHTML = '';
-      const cards = shuffledData[currentPage - 1].map(pet => createCard(pet));
-      cards.forEach(card => ourCards.append(card));
+window.onresize = () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (window.matchMedia('(min-width: 1280px)').matches) {
+      totalPages = 6;
+    } else if (window.matchMedia('(min-width: 768px)').matches) {
+      totalPages = 8;
+    } else {
+      totalPages = 16;
     }
+    processData();
+    currentPage = 1;
+    ourPaginationBtn3.textContent = currentPage;
+  }, 100);
+};
 
-    updateCardsAndPagination(1);
+async function getPets() {
+  try {
+    const response = await fetch(dataJson);
+    data = await response.json();
+    processData();
+  } catch (error) {
+    console.error(error);
+  }
+}
+getPets();
+
+function processData() {
+  const repeatedData = data.flatMap(pet => Array(6).fill(pet));
+  const uniqueIds = [...new Set(repeatedData.map(pet => pet.name))];
+  let shuffledData320 = [], shuffledData768 = [], shuffledData = []; 
+
+  const createRandomPets = (count) => {
+    let randomPets = [];
+    while (randomPets.length < count) {
+      let randomId = uniqueIds[Math.floor(Math.random() * uniqueIds.length)];
+      let pet = repeatedData.find(pet => pet.name === randomId);
+      if (!randomPets.includes(pet)) {
+        randomPets.push(pet);
+      }
+    }
+    return randomPets;
+  }
+  
+  shuffledData320 = new Array(totalPages).fill().map(() => createRandomPets(3));
+  shuffledData768 = new Array(totalPages).fill().map(() => createRandomPets(6));
+  shuffledData = new Array(totalPages).fill().map(() => createRandomPets(8));
+
+  const paginationBtnClick = (page) => {
+    currentPage = page;
+    if (currentPage < 1) {
+      currentPage = 1;
+    } else if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
     updatePagination(currentPage, totalPages);
-  });
+    updateCardsAndPagination(currentPage);
+  };
+
+  ourPaginationBtn1.onclick = () => paginationBtnClick(1);
+  ourPaginationBtn2.onclick = () => paginationBtnClick(currentPage - 1);
+  ourPaginationBtn4.onclick = () => paginationBtnClick(currentPage + 1);
+  ourPaginationBtn5.onclick = () => paginationBtnClick(totalPages);
+
+  function updateCardsAndPagination(currentPage) {
+    ourCards.innerHTML = ''; 
+    if (window.matchMedia('(min-width: 1280px)').matches) {
+      let petsArray = shuffledData[currentPage - 1];
+      petsArray.forEach(pet => {
+        const card = createCard(pet);
+        ourCards.appendChild(card);
+      });
+    } else if (window.matchMedia('(min-width: 768px)').matches) {
+      let petsArray768 = shuffledData768[currentPage - 1];
+      petsArray768.forEach(pet => {
+        const card = createCard(pet);
+        ourCards.appendChild(card);
+      });
+    } else {
+      let petsArray320 = shuffledData320[currentPage - 1];
+      petsArray320.forEach(pet => {
+        const card = createCard(pet);
+        ourCards.appendChild(card);
+      });
+    }
+    updatePagination(currentPage, totalPages);
+  }
+
+  updateCardsAndPagination(1);
+  updatePagination(currentPage, totalPages);
+}
 
 function createCard(pet) {
   const card = document.createElement('div');

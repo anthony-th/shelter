@@ -94,21 +94,6 @@
           letter-spacing: 0.06em;
           background: transparent;
         }
-        @media screen {
-          @media (max-width: 1279px) {
-            &:nth-child(7),
-            &:last-child {
-              display: none;
-          }
-          @media (max-width: 767px) {
-            &:nth-child(4),
-            &:nth-child(5),
-            &:nth-child(6) {
-              display: none;
-            }
-          }
-        }
-       }
       }
     }
     .pets-our-pagination {
