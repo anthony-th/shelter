@@ -171,7 +171,6 @@
   }
 }
 
-
 .modal {
   display: flex;
   position: fixed;
@@ -288,6 +287,11 @@
           width: 4px;
           height: 4px;
           color: $color-primary;
+        }
+        @media screen {
+          @media (max-width: 1279px) {
+            font-size: 13px;
+          }
         }
       }
     }
