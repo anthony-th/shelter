@@ -22,7 +22,19 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+                    {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require("postcss-preset-env")({
+                    browsers: "last 4 versions",
+                  }),
+                ],
+              },
+            },
+          },
+          'sass-loader',
         ]
       },
       {

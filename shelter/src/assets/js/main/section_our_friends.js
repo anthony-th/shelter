@@ -168,7 +168,7 @@ function openModal(pet) {
   modalCancel.classList.add('modal-cancel');
   const modalSvg = document.createElement('img');
   modalSvg.classList.add('modal-svg');
-  modalSvg.src = './images/cancel.svg';
+  modalSvg.src = './assets/images/cancel.svg';
   const modalBlock = document.createElement('div');
   modalBlock.classList.add('modal-block');
   const modalTitle = document.createElement('h2');

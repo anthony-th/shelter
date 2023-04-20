@@ -6,7 +6,7 @@
     max-width: 1280px;
     justify-content: space-between;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     @media screen {
       @media (max-width: 1279px) {
         flex-wrap: wrap;
