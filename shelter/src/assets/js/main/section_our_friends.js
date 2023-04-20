@@ -25,8 +25,14 @@ ourPrevBtn.classList.add('prev-btn');
 const prevImg = document.createElement('img');
 prevImg.classList.add('prev-img');
 prevImg.src = arrowImg;
+const cardsContainer = document.createElement('div');
+cardsContainer.classList.add('cards-container');
 const ourCards = document.createElement('div');
-ourCards.classList.add('cards');
+ourCards.classList.add('cards', 'active');
+const ourCardsTwo = document.createElement('div');
+ourCardsTwo.classList.add('cards', 'previously');
+const ourCardsThree = document.createElement('div');
+ourCardsThree.classList.add('cards', 'next');
 const ourNextBtn = document.createElement('a');
 ourNextBtn.classList.add('next-btn');
 const nextImg = document.createElement('img');
@@ -37,57 +43,96 @@ ourBtn.classList.add('our-friends-btn');
 ourBtn.textContent = 'Get to know the rest';
 ourBtn.href = './pets.html';
 
-let data;
+let currentCards = [];
 
 async function getPets() {
   try {
-    const response = await fetch(dataJson);
-    data = await response.json();
-    processData();
+    const randomPets = dataJson.sort(() => 0.5 - Math.random()).slice(0, 8);
+    const cardGroups = [];
+    for (let i = 0; i < randomPets.length; i += 3) {
+      cardGroups.push(randomPets.slice(i, i + 3));
+    }
+    currentCards = cardGroups[0];
+    const remainingPets = randomPets.filter(pet => !currentCards.includes(pet));
+    const secondGroup = remainingPets.slice(0, 3);
+    const thirdGroup = [...secondGroup.slice(0, 2), remainingPets.slice(3)[0]];
+    renderCards(currentCards, ourCards);
+    console.log(currentCards);
+    renderCards(secondGroup, ourCardsTwo);
+    console.log(secondGroup);
+    renderCards(thirdGroup, ourCardsThree);
+    console.log(thirdGroup);
   } catch (error) {
     console.error(error);
   }
 }
+
+function renderCards(cards, container) {
+  container.innerHTML = '';
+  cards.forEach((pet) => {
+    const card = createCard(pet);
+    container.append(card);
+  });
+}
+
 getPets();
 
-function processData() {
-  data.sort((a, b) => a.name.localeCompare(b.name));
-  const uniqueIds = [...new Set(data.map(pet => pet.name))];
-  const Pets = [];
-  while (Pets.length < 3) {
-    const randomIndex = Math.floor(Math.random() * uniqueIds.length);
-    const petName = uniqueIds[randomIndex];
-    const pet = data.find(pet => pet.name === petName);
-    if (!Pets.includes(pet)) {
-      Pets.push(pet);
-    }
-  }
-  Pets.forEach(pet => {
-    const card = createCard(pet);
-    ourCards.append(card);
-  });
+ourPrevBtn.onclick = prevPage;
+ourNextBtn.onclick = nextPage;
+
+
+function prevPage() {
+
+  ourCards.classList.add('transitionx-left');
+  ourCardsTwo.classList.add('transitionx-left');
+  ourCardsThree.classList.add('transitionx-left');
+  ourCards.addEventListener('transitionend', handleTransitionEndLeft);
+
 }
 
-ourNextBtn.onclick = generateNewPets;
-ourPrevBtn.onclick = generateNewPets;
+function nextPage() {
 
-function generateNewPets() {
-  const uniqueIds = [...new Set(data.map(pet => pet.name))];
-  const Pets = [];
-  while (Pets.length < 3) {
-    const randomIndex = Math.floor(Math.random() * uniqueIds.length);
-    const petName = uniqueIds[randomIndex];
-    const pet = data.find(pet => pet.name === petName);
-    if (!Pets.includes(pet)) {
-      Pets.push(pet);
-    }
-  }
-  ourCards.innerHTML = '';
-  Pets.forEach(pet => {
-    const card = createCard(pet);
-    ourCards.append(card);
-  });
+  ourCards.addEventListener('transitionend', handleTransitionEndRight);
 }
+
+function handleTransitionEndLeft() {
+  if (ourCards.classList.contains('active')) {
+    ourCards.classList.remove('active');
+    ourCards.classList.add('next');
+    ourCardsTwo.classList.remove('previously');
+    ourCardsTwo.classList.add('active');
+    ourCardsThree.classList.remove('next');
+    ourCardsThree.classList.add('previously');
+  } else if (ourCardsTwo.classList.contains('active')) {
+    ourCardsTwo.classList.remove('active');
+    ourCardsTwo.classList.add('next');
+    ourCardsThree.classList.remove('previously');
+    ourCardsThree.classList.add('active');
+    ourCards.classList.remove('next');
+    ourCards.classList.add('previously');
+  } else {
+    ourCardsThree.classList.remove('active');
+    ourCardsThree.classList.add('next');
+    ourCards.classList.remove('previously');
+    ourCards.classList.add('active');  
+    ourCardsTwo.classList.remove('next');
+    ourCardsTwo.classList.add('previously');
+  }
+
+  ourCards.classList.remove('transitionx-left');
+  ourCardsTwo.classList.remove('transitionx-left');
+  ourCardsThree.classList.remove('transitionx-left');
+  ourCards.removeEventListener('transitionend', handleTransitionEndLeft);
+
+
+}
+
+function handleTransitionEndRight() {
+
+
+  ourCards.removeEventListener('transitionend', handleTransitionEndLeft);
+}
+
 
 function createCard(pet) {
   const ourCard = document.createElement('div');
@@ -108,6 +153,8 @@ function createCard(pet) {
   ourCard.append(ourCardImg, ourCardSubtitle, ourCardBtn);
   return ourCard;
 }
+
+
 
 function openModal(pet) {
   const shadow = document.createElement('div');
@@ -163,7 +210,8 @@ function openModal(pet) {
 
 sectionOur.append(ourContainer);
 ourContainer.append(ourTitle, ourSlider, ourBtn);
-ourSlider.append(ourPrevBtn, ourCards, ourNextBtn);
+cardsContainer.append(ourCardsTwo, ourCards, ourCardsThree);
+ourSlider.append(ourPrevBtn, cardsContainer, ourNextBtn);
 ourPrevBtn.append(prevImg);
 ourNextBtn.append(nextImg);
 ourContainer.append(ourBtn);

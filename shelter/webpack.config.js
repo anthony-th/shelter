@@ -13,8 +13,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
-  },
+    filename: '[name].[contenthash].js',
+  },  
   module: {
     rules: [
       {
@@ -26,11 +26,18 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg|webp|json)$/i,
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name][ext]'
+          filename: 'assets/images/[name][ext]'
         }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/fonts/[name][ext]",
+        },
       },
     ]
   },
@@ -49,7 +56,7 @@ module.exports = {
       logo: './src/assets/img/favicon.png',
       mode: 'webapp',
       devMode: 'webapp', 
-      prefix: 'assets/',
+      prefix: 'assets/images/',
       favicons: {
         icons: {
           android: false,
@@ -64,7 +71,7 @@ module.exports = {
       }
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: "style.css",
     }),
     new CleanWebpackPlugin(),
   ]

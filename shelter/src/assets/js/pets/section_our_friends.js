@@ -9,10 +9,25 @@ ourTitle.classList.add('pets-our-title');
 ourTitle.innerHTML = `Our friends who<br>are looking for a house`;
 const ourCards = document.createElement('div');
 ourCards.classList.add('pets-our-cards');
+const ourPagination = document.createElement('div');
+ourPagination.classList.add('pets-our-pagination');
+const ourPaginationBtn1 = document.createElement('button');
+ourPaginationBtn1.classList.add('pets-our-pagination-btn');
+ourPaginationBtn1.textContent = '<<';
+const ourPaginationBtn2 = document.createElement('button');
+ourPaginationBtn2.classList.add('pets-our-pagination-btn');
+ourPaginationBtn2.textContent = '<';
+const ourPaginationBtn3 = document.createElement('button');
+ourPaginationBtn3.classList.add('pets-our-pagination-btn', 'pets-pagination-btn-active');
+const ourPaginationBtn4 = document.createElement('button');
+ourPaginationBtn4.classList.add('pets-our-pagination-btn');
+ourPaginationBtn4.textContent = '>';
+const ourPaginationBtn5 = document.createElement('button');
+ourPaginationBtn5.classList.add('pets-our-pagination-btn');
+ourPaginationBtn5.textContent = '>>';
 
 let currentPage = 1;
 let totalPages = 6;
-let data;
 let resizeTimer;
 
 window.onresize = () => {
@@ -33,9 +48,7 @@ window.onresize = () => {
 
 async function getPets() {
   try {
-    const response = await fetch(dataJson);
-    data = await response.json();
-    processData();
+    processData(dataJson);
   } catch (error) {
     console.error(error);
   }
@@ -43,7 +56,7 @@ async function getPets() {
 getPets();
 
 function processData() {
-  const repeatedData = data.flatMap(pet => Array(6).fill(pet));
+  const repeatedData = dataJson.flatMap(pet => Array(6).fill(pet));
   const uniqueIds = [...new Set(repeatedData.map(pet => pet.name))];
   let shuffledData320 = [], shuffledData768 = [], shuffledData = []; 
 
@@ -180,23 +193,6 @@ export function openModal(pet) {
     shadow.remove();
   }
 }
-
-const ourPagination = document.createElement('div');
-ourPagination.classList.add('pets-our-pagination');
-const ourPaginationBtn1 = document.createElement('button');
-ourPaginationBtn1.classList.add('pets-our-pagination-btn');
-ourPaginationBtn1.textContent = '<<';
-const ourPaginationBtn2 = document.createElement('button');
-ourPaginationBtn2.classList.add('pets-our-pagination-btn');
-ourPaginationBtn2.textContent = '<';
-const ourPaginationBtn3 = document.createElement('button');
-ourPaginationBtn3.classList.add('pets-our-pagination-btn', 'pets-pagination-btn-active');
-const ourPaginationBtn4 = document.createElement('button');
-ourPaginationBtn4.classList.add('pets-our-pagination-btn');
-ourPaginationBtn4.textContent = '>';
-const ourPaginationBtn5 = document.createElement('button');
-ourPaginationBtn5.classList.add('pets-our-pagination-btn');
-ourPaginationBtn5.textContent = '>>';
 
 function updatePagination(currentPage, totalPages) {
   ourPaginationBtn3.textContent = currentPage;

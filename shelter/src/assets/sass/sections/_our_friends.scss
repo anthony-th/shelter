@@ -78,70 +78,90 @@
           order: 2;
         }
       }
-      .cards {
-        display: flex;
-        gap: 90px;
+      .cards-container {
         max-width: calc(270px * 3 + 90px * 2);
         overflow: hidden;
-        @media screen {
-          @media (max-width: 1279px) {
-            gap: 40px;
-            max-width: calc(270px * 2 + 40px);
-          }
-          @media (max-width: 767px) {
-            max-width: 270px;
-          }
-        }
-        .card {
+        display: flex;
+        // justify-content: center;
+        .cards {
           display: flex;
-          flex-direction: column;
-          gap: 30px;
-          border-radius: 9px;
-          padding: 0 0 30px;
-          background: $color-light-s;
-          align-items: center;
-          cursor: pointer;
-          &:hover {
-            background: #ffffff;
-            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-            .card__btn {
-              background-color: $color-primary-light;
-              border-color: $color-primary-light;
-              cursor: pointer;
+          gap: 90px;
+          transform: translateX(-990px);
+          @media screen {
+            @media (max-width: 1279px) {
+              gap: 40px;
+              max-width: calc(270px * 2 + 40px);
+            }
+            @media (max-width: 767px) {
+              max-width: 270px;
             }
           }
-          .card__img {
-            width: 270px;
-            height: 270px;
-            border-radius: 9px 9px 0px 0px;
-          }
-          .card__subtitle {
-            font-family: 'Georgia';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 110%;
-            color: $color-dark-l;
-            letter-spacing: 0.06em;
-          }
-          .card__btn {
-            background: $color-light-s;
-            width: 187px;
-            height: 52px;
-            border: 2px solid $color-primary;
-            border-radius: 100px;
+          .card {
             display: flex;
             flex-direction: column;
+            gap: 30px;
+            border-radius: 9px;
+            padding: 0 0 30px;
+            background: $color-light-s;
             align-items: center;
-            justify-content: center;
-            font-family: 'Georgia';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 130%;
-            color: $color-dark-3xl;
-            letter-spacing: 0.06em;
+            cursor: pointer;
+            &:hover {
+              background: #ffffff;
+              box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+              .card__btn {
+                background-color: $color-primary-light;
+                border-color: $color-primary-light;
+                cursor: pointer;
+              }
+            }
+            .card__img {
+              width: 270px;
+              height: 270px;
+              border-radius: 9px 9px 0px 0px;
+            }
+            .card__subtitle {
+              font-family: 'Georgia';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 110%;
+              color: $color-dark-l;
+              letter-spacing: 0.06em;
+            }
+            .card__btn {
+              background: $color-light-s;
+              width: 187px;
+              height: 52px;
+              border: 2px solid $color-primary;
+              border-radius: 100px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              font-family: 'Georgia';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 17px;
+              line-height: 130%;
+              color: $color-dark-3xl;
+              letter-spacing: 0.06em;
+            }
           }
+        }
+        .previously {
+          order: 1;
+        }
+        .active {
+          order: 2;
+        }
+        .next {
+          order: 3;
+        }
+        .transitionx-right {
+          transform: translateX(-1980px);
+        }
+        .transitionx-left {
+          transform: translateX(0px);
         }
       }
     }
@@ -179,7 +199,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   gap: 29px;
-  max-width: 900px;
+  min-width: 900px;
   max-height: 500px;
   background: $color-light-s;
   border-radius: 9px;
