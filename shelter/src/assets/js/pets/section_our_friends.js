@@ -36,24 +36,26 @@ let currentPageChanged = false;
 processData();
 
 window.onresize = () => {
-  let newTotalPages;
-  if (window.matchMedia("(min-width: 1280px)").matches) {
-    newTotalPages = 6;
-  } else if (window.matchMedia("(min-width: 768px)").matches) {
-    newTotalPages = 8;
-  } else {
-    newTotalPages = 16;
-  }
-  if (totalPages !== newTotalPages) {
-    totalPages = newTotalPages;
-    currentPageChanged = true;
-  } else {
-    currentPageChanged = false;
-  }
-  if (currentPageChanged) {
-    processData();
-    currentPage = 1;
-    ourPaginationBtn3.textContent = currentPage;
+  if (location.pathname.includes('pets.html')) {
+    let newTotalPages;
+    if (window.matchMedia("(min-width: 1280px)").matches) {
+      newTotalPages = 6;
+    } else if (window.matchMedia("(min-width: 768px)").matches) {
+      newTotalPages = 8;
+    } else {
+      newTotalPages = 16;
+    }
+    if (totalPages !== newTotalPages) {
+      totalPages = newTotalPages;
+      currentPageChanged = true;
+    } else {
+      currentPageChanged = false;
+    }
+    if (currentPageChanged) {
+      processData();
+      currentPage = 1;
+      ourPaginationBtn3.textContent = currentPage;
+    }
   }
 };
 

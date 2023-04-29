@@ -38,45 +38,34 @@ ourBtn.classList.add('our-friends-btn');
 ourBtn.textContent = 'Get to know the rest';
 ourBtn.href = './pets.html';
 
-processData();
+getData();
 
-function processData() {
-  dataJson.sort((a, b) => a.name.localeCompare(b.name));
-  const uniqueIds = [...new Set(dataJson.map(pet => pet.name))];
-  const Pets = [];
-  while (Pets.length < 3) {
-    const randomIndex = Math.floor(Math.random() * uniqueIds.length);
-    const petName = uniqueIds[randomIndex];
-    const pet = dataJson.find(pet => pet.name === petName);
-    if (!Pets.includes(pet)) {
-      Pets.push(pet);
-    }
-  }
+function getData() {
+  shuffleArray(dataJson);
+  ourCards.innerHTML = '';
   dataJson.forEach(pet => {
     const card = createCard(pet);
     ourCards.append(card);
   });
 }
 
-ourNextBtn.onclick = generateNewPets;
-ourPrevBtn.onclick = generateNewPets;
-
-function generateNewPets() {
-  const uniqueIds = [...new Set(dataJson.map(pet => pet.name))];
-  const Pets = [];
-  while (Pets.length < 3) {
-    const randomIndex = Math.floor(Math.random() * uniqueIds.length);
-    const petName = uniqueIds[randomIndex];
-    const pet = dataJson.find(pet => pet.name === petName);
-    if (!Pets.includes(pet)) {
-      Pets.push(pet);
-    }
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
-  ourCards.innerHTML = '';
-  dataJson.forEach(pet => {
-    const card = createCard(pet);
-    ourCards.append(card);
-  });
+  return array;
+}
+
+ourNextBtn.onclick = generatePrev;
+ourPrevBtn.onclick = generateNext;
+
+function generateNext() {
+  console.log('generateNext');
+}
+
+function generatePrev() {
+  console.log('generatePrev');
 }
 
 sectionOur.append(ourContainer);
