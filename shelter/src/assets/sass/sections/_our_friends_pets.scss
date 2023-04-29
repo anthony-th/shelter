@@ -47,54 +47,6 @@
           flex-direction: column;
         }
       }
-      .pets-our-card {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        max-width: 270px;
-        padding: 0 0 30px;
-        align-items: center;
-        background: $color-light-s;
-        border-radius: 9px;
-        cursor: pointer;
-        &:hover {
-          background: $color-light-xl;
-          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-          .pets-our-card-btn {
-            background-color: $color-primary-light;
-            border-color: $color-primary-light;
-            cursor: pointer;
-          }
-        }
-        .pets-our-card-img {
-          width: 270px;
-          height: 270px;
-          border-radius: 9px 9px 0px 0px;
-        }
-        .pets-our-card-title {
-          font-family: 'Georgia';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 20px;
-          line-height: 23px;
-          letter-spacing: 0.06em;
-          color: $color-dark-l;
-        }
-        .pets-our-card-btn {
-          width: 187px;
-          height: 52px;
-          border: 2px solid $color-primary;
-          border-radius: 100px;
-          color: $color-dark-3xl;
-          font-family: 'Georgia';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 17px;
-          line-height: 130%;
-          letter-spacing: 0.06em;
-          background: transparent;
-        }
-      }
     }
     .pets-our-pagination {
       max-width: 340px;
@@ -132,4 +84,53 @@
       }
     }
   }  
+}
+
+.pets-our-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 270px;
+  padding: 0 0 30px;
+  align-items: center;
+  background: $color-light-s;
+  border-radius: 9px;
+  cursor: pointer;
+  &:hover {
+    background: $color-light-xl;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    .pets-our-card-btn {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+      cursor: pointer;
+    }
+  }
+  .pets-our-card-img {
+    width: 270px;
+    height: 270px;
+    border-radius: 9px 9px 0px 0px;
+  }
+  .pets-our-card-title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+  }
+  .pets-our-card-btn {
+    width: 187px;
+    height: 52px;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    color: $color-dark-3xl;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    background: transparent;
+  }
 }
