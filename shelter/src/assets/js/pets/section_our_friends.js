@@ -184,6 +184,12 @@ export function openModal(pet) {
   const modalTextParasites = document.createElement("li");
   modalTextParasites.classList.add("modal-info");
   modalTextParasites.innerHTML = `<b>Parasites:</b> ${pet.parasites}`;
+  modalCancel.onclick = removeAll;
+  shadow.onclick = removeAll;
+  function removeAll() {
+    modal.remove();
+    shadow.remove();
+  }
   modalTextList.append(
     modalTextAge,
     modalTextInoculations,
@@ -193,14 +199,7 @@ export function openModal(pet) {
   modalBlock.append(modalTitle, modalSubtitle, modalDescription, modalTextList);
   modalCancel.append(modalSvg);
   modal.append(modalImg, modalCancel, modalBlock);
-  ourCards.append(modal);
-  document.body.append(shadow);
-  modalCancel.onclick = removeAll;
-  shadow.onclick = removeAll;
-  function removeAll() {
-    modal.remove();
-    shadow.remove();
-  }
+  ourCards.append(modal, shadow);
 }
 
 function updatePagination(currentPage, totalPages) {

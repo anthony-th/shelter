@@ -27,6 +27,7 @@ const prevImg = document.createElement('img');
 prevImg.classList.add('prev-img');
 prevImg.src = arrowImg;
 ourCards.className = 'cards';
+ourCards.innerHTML = '';
 const ourNextBtn = document.createElement('a');
 ourNextBtn.classList.add('next-btn');
 const nextImg = document.createElement('img');
@@ -51,7 +52,7 @@ function processData() {
       Pets.push(pet);
     }
   }
-  Pets.forEach(pet => {
+  dataJson.forEach(pet => {
     const card = createCard(pet);
     ourCards.append(card);
   });
@@ -72,7 +73,7 @@ function generateNewPets() {
     }
   }
   ourCards.innerHTML = '';
-  Pets.forEach(pet => {
+  dataJson.forEach(pet => {
     const card = createCard(pet);
     ourCards.append(card);
   });
