@@ -1,76 +1,43 @@
-export const header = document.createElement('header');
-header.classList.add('header');
-const headerContainer = document.createElement('div');
-headerContainer.classList.add('header__container');
-const linkLogo = document.createElement('a');
-linkLogo.classList.add('logo');
-linkLogo.href = '#';
-const titleLogo = document.createElement('h1');
-titleLogo.classList.add('logo__title');
-titleLogo.textContent = 'Cozy House';
-const subtitleLogo = document.createElement('p');
-subtitleLogo.classList.add('logo__subtitle');
-subtitleLogo.textContent = 'Shelter for pets in Boston';
-const nav = document.createElement('nav');
-nav.classList.add('nav');
-const navList = document.createElement('ul');
-navList.classList.add('nav__list');
-const listItem1 = document.createElement('li');
-listItem1.classList.add('nav__item');
-const listItem1Link = document.createElement('a');
-listItem1Link.textContent = 'About the shelter';
-listItem1Link.classList.add('links', 'active-nav');
-const listItem2 = document.createElement('li');
-listItem2.classList.add('nav__item');
-const listItem2Link = document.createElement('a');
-listItem2Link.textContent = 'Our pets';
-listItem2Link.href = './pets.html';
-listItem2Link.classList.add('links');
-const listItem3 = document.createElement('li');
-listItem3.classList.add('nav__item');
-const listItem3Link = document.createElement('a');
-listItem3Link.textContent = 'Help the shelter';
-listItem3Link.href = '#help-shelter';
-listItem3Link.classList.add('links');
-const listItem4 = document.createElement('li');
-listItem4.classList.add('nav__item');
-const listItem4Link = document.createElement('a');
-listItem4Link.textContent = 'Contacts';
-listItem4Link.href = '#contacts';
-listItem4Link.classList.add('links');
-const burgerMenu = document.createElement('div');
-burgerMenu.classList.add('burger-menu');
-burgerMenu.style.cursor = 'pointer';
-const burgerLine1 = document.createElement('hr');
-burgerLine1.classList.add('burger-line');
-const burgerLine2 = document.createElement('hr');
-burgerLine2.classList.add('burger-line');
-const burgerLine3 = document.createElement('hr');
-burgerLine3.classList.add('burger-line');
-const shadow = document.createElement('div');
-shadow.classList.add('shadow');
+import { createElement } from '../utils.js';
+
+export const header = createElement('header', ['header']);
+const headerContainer = createElement('div', ['header__container']);
+const linkLogo = createElement('a', ['logo'], '', { href: '#' });
+const titleLogo = createElement('h1', ['logo__title'], 'Cozy House');
+const subtitleLogo = createElement('p', ['logo__subtitle'], 'Shelter for pets in Boston');
+const nav = createElement('nav', ['nav']);
+const navList = createElement('ul', ['nav__list']);
+const burgerMenu = createElement('div', ['burger-menu']);
+const burgerLines = ['burger-line', 'burger-line', 'burger-line'].map(() => createElement('hr', ['burger-line']));
+const shadow = createElement('div', ['shadow']);
 
 header.append(headerContainer);
 headerContainer.append(linkLogo, nav);
 linkLogo.append(titleLogo, subtitleLogo);
 nav.append(navList, burgerMenu, shadow);
-burgerMenu.append(burgerLine1, burgerLine2, burgerLine3);
-navList.append(listItem1, listItem2, listItem3, listItem4);
-listItem1.append(listItem1Link);
-listItem2.append(listItem2Link);
-listItem3.append(listItem3Link);
-listItem4.append(listItem4Link);
+burgerLines.forEach(line => burgerMenu.append(line));
+
+const navItems = [
+    { text: 'About the shelter', href: '#', classes: ['links', 'active-nav'] },
+    { text: 'Our pets', href: './pets.html', classes: ['links'] },
+    { text: 'Help the shelter', href: '#help-shelter', classes: ['links'] },
+    { text: 'Contacts', href: '#contacts', classes: ['links'] }
+];
+
+navItems.forEach(({ text, href, classes }) => {
+    const listItem = createElement('li', ['nav__item']);
+    const listItemLink = createElement('a', classes, text, { href });
+    listItem.append(listItemLink);
+    navList.append(listItem);
+    listItemLink.onclick = toggleMenu;
+});
 
 burgerMenu.onclick = toggleMenu;
-listItem1Link.onclick = toggleMenu;
-listItem2Link.onclick = toggleMenu;
-listItem3Link.onclick = toggleMenu;
-listItem4Link.onclick = toggleMenu;
 shadow.onclick = toggleMenu;
 
 function toggleMenu() {
-  burgerMenu.classList.toggle('rotate');
-  navList.classList.toggle('active-menu');
-  document.body.classList.toggle('overflow-hidden');
-  shadow.classList.toggle('shadow-open');
+    burgerMenu.classList.toggle('rotate');
+    navList.classList.toggle('active-menu');
+    document.body.classList.toggle('overflow-hidden');
+    shadow.classList.toggle('shadow-open');
 }

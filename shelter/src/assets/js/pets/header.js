@@ -40,7 +40,6 @@ listItem4Link.href = '#contacts';
 listItem4Link.classList.add('pets-links');
 const burgerMenu = document.createElement('div');
 burgerMenu.classList.add('pets-burger-menu');
-burgerMenu.style.cursor = 'pointer';
 const burgerLine1 = document.createElement('hr');
 burgerLine1.classList.add('pets-burger-line');
 const burgerLine2 = document.createElement('hr');
