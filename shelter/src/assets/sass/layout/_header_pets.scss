@@ -98,10 +98,11 @@
         flex-direction: column;
         width: 30px;
         height: 22px;
+        z-index: 5;
+        position: relative;
         cursor: pointer;
         @media screen and (max-width: 767px) {
           display: flex;
-          z-index: 4;
         }
         .pets-burger-line {
           height: 2px;

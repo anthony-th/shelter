@@ -101,10 +101,11 @@
         flex-direction: column;
         width: 30px;
         height: 22px;
+        z-index: 5;
+        position: relative;
         cursor: pointer;
         @media screen and (max-width: 767px) {
           display: flex;
-          z-index: 4;
         }
         .burger-line {
           height: 2px;
@@ -140,9 +141,6 @@
 .rotate {
   @media screen and (max-width: 767px) {
     transform: rotate(90deg);
-    position: fixed;
-    top: 49px;
-    right: 20px;
   }
 }
 
