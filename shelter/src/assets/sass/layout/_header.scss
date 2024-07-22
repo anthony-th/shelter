@@ -26,14 +26,6 @@
       align-items: center;
       width: 184px;
       height: 60px;
-      &:hover {
-        .logo__title {
-          color: $color-light-l;
-        }
-        .logo__subtitle {
-          color: $color-primary;
-        }
-      }
       .logo__title {
         color: $color-primary;
         font-size: 32px;
@@ -89,9 +81,6 @@
             user-select: none;
             color: $color-dark-s;
             cursor: pointer;
-            &:hover {
-              color: $color-light-s;
-            }
             &:active {
               border-bottom: 3px solid $color-primary;
               padding-bottom: 3px;

@@ -1,0 +1,159 @@
+@media (hover: hover) and (pointer: fine) {
+  .header {
+    .header__container {
+      .nav {
+        .nav__list {
+          .nav__item {
+            .links {
+              user-select: none;
+              color: $color-dark-s;
+              cursor: pointer;
+              &:hover {
+                color: $color-light-s;
+              }
+            }
+          }
+        }
+      }
+      .logo {
+        &:hover {
+          .logo__title {
+            color: $color-light-l;
+          }
+          .logo__subtitle {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+  .pets-header {
+    .pets-header__container {
+      .pets-nav {
+        .pets-nav__list {
+          .pets-nav__item {
+            .pets-links {
+              &:hover {
+                color: $color-dark-3xl;
+              }
+            }
+          }
+        }
+      }
+      .pets-logo {
+        &:hover {
+          .pets-logo__title,
+          .pets-logo__subtitle {
+            color: $color-dark-3xl;
+          }
+        }
+      }
+    }
+  }
+  .not-only-block {
+    .not-only-container {
+      .not-only-textblock {
+        .textblock__button {
+          &:hover {
+            background: $color-primary-light;
+          }
+        }
+      }
+    }
+  }
+  .pets-our-friends {
+    .pets-our-container {
+      .pets-our-pagination {
+        .pets-our-pagination-btn {
+          &:not(:disabled):hover {
+            background: $color-primary;
+          }
+        }
+      }
+      .pets-our-card {
+        &:hover {
+          background: $color-light-xl;
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          .pets-our-card-btn {
+            background-color: $color-primary-light;
+            border-color: $color-primary-light;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .our-friends {
+    .our-friends-container {
+      .our-friends-slider {
+        .prev-btn,
+        .next-btn {
+          &:hover {
+            background-color: $color-primary-light;
+            border-color: $color-primary-light;
+          }
+        }
+      }
+      .our-friends-btn {
+        &:hover {
+          background: $color-primary-light;
+        }
+      }
+    }
+  }
+  .you-can {
+    .you-can-container {
+      .you-can-block {
+        .you-can-card {
+          &:hover {
+            background: $color-primary-light;
+          }
+        }
+      }
+    }
+  }
+  .modal {
+    .modal-cancel {
+      &:hover {
+        background-color: $color-primary;
+        .modal-svg {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%) hue-rotate(192deg) brightness(101%) contrast(104%);
+        }
+      }
+    }
+  }
+  .footer {
+    .footer-container {
+      .contacts {
+        .mail,
+        .phone {
+          &:hover {
+            .mail-img,
+            .phone-img {
+              filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%) hue-rotate(192deg) brightness(101%) contrast(104%);
+            }
+            .mail-text,
+            .phone-text {
+              color: $color-light-xl;
+            }
+          }
+        }
+      }
+      .locations {
+        .location-boston,
+        .location-london {
+          &:hover {
+            .location-boston-img,
+            .location-london-img {
+              filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%) hue-rotate(192deg) brightness(101%) contrast(104%);
+            }
+            .location-boston-text,
+            .location-london-text {
+              color: $color-light-xl;
+            }
+          }
+        }
+      }
+    }
+  }
+}
