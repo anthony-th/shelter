@@ -1,3 +1,4 @@
+import { createElement } from '../common/createElement';
 import howImg1Src from '../../svg/icon-pet-food.svg';
 import howImg2Src from '../../svg/icon-transportation.svg';
 import howImg3Src from '../../svg/icon-toys.svg';
@@ -8,107 +9,29 @@ import howImg7Src from '../../svg/icon-medicines.svg';
 import howImg8Src from '../../svg/icon-collars-leashes.svg';
 import howImg9Src from '../../svg/icon-sleeping-area.svg';
 
-export const sectionHow = document.createElement('section');
-sectionHow.classList.add('how-you');
-const howContainer = document.createElement('div');
-howContainer.classList.add('how-you-container');
-const howTitle = document.createElement('h2');
-howTitle.classList.add('how-you-title');
-howTitle.id = 'help-shelter';
-howTitle.innerHTML = `How you can help<br>our shelter`;
-const howIcons = document.createElement('div');
-howIcons.classList.add('how-you-icons');
-const howIcon1 = document.createElement('div');
-howIcon1.classList.add('icon');
-const howImg1 = document.createElement('img');
-howImg1.classList.add('icon-img');
-howImg1.src = howImg1Src;
-howImg1.alt = '';
-const howTitle1 = document.createElement('h3');
-howTitle1.classList.add('icon-title');
-howTitle1.textContent = 'Pet food';
-const howIcon2 = document.createElement('div');
-howIcon2.classList.add('icon');
-const howImg2 = document.createElement('img');
-howImg2.classList.add('icon-img');
-howImg2.src = howImg2Src;
-howImg2.alt = '';
-const howTitle2 = document.createElement('h3');
-howTitle2.classList.add('icon-title');
-howTitle2.textContent = 'Transportation';
-const howIcon3 = document.createElement('div');
-howIcon3.classList.add('icon');
-const howImg3 = document.createElement('img');
-howImg3.classList.add('icon-img');
-howImg3.src = howImg3Src;
-howImg3.alt = '';
-const howTitle3 = document.createElement('h3');
-howTitle3.classList.add('icon-title');
-howTitle3.textContent = 'Toys';
-const howIcon4 = document.createElement('div');
-howIcon4.classList.add('icon');
-const howImg4 = document.createElement('img');
-howImg4.classList.add('icon-img');
-howImg4.src = howImg4Src;
-howImg4.alt = '';
-const howTitle4 = document.createElement('h3');
-howTitle4.classList.add('icon-title');
-howTitle4.textContent = 'Bowls and cups';
-const howIcon5 = document.createElement('div');
-howIcon5.classList.add('icon');
-const howImg5 = document.createElement('img');
-howImg5.classList.add('icon-img');
-howImg5.src = howImg5Src;
-howImg5.alt = '';
-const howTitle5 = document.createElement('h3');
-howTitle5.classList.add('icon-title');
-howTitle5.textContent = 'Shampoos';
-const howIcon6 = document.createElement('div');
-howIcon6.classList.add('icon');
-const howImg6 = document.createElement('img');
-howImg6.classList.add('icon-img');
-howImg6.src = howImg6Src;
-howImg6.alt = '';
-const howTitle6 = document.createElement('h3');
-howTitle6.classList.add('icon-title');
-howTitle6.textContent = 'Vitamins';
-const howIcon7 = document.createElement('div');
-howIcon7.classList.add('icon');
-const howImg7 = document.createElement('img');
-howImg7.classList.add('icon-img');
-howImg7.src = howImg7Src;
-howImg7.alt = '';
-const howTitle7 = document.createElement('h3');
-howTitle7.classList.add('icon-title');
-howTitle7.textContent = 'Medicines';
-const howIcon8 = document.createElement('div');
-howIcon8.classList.add('icon');
-const howImg8 = document.createElement('img');
-howImg8.classList.add('icon-img');
-howImg8.src = howImg8Src;
-howImg8.alt = '';
-const howTitle8 = document.createElement('h3');
-howTitle8.classList.add('icon-title');
-howTitle8.textContent = 'Collars / leashes';
-const howIcon9 = document.createElement('div');
-howIcon9.classList.add('icon');
-const howImg9 = document.createElement('img');
-howImg9.classList.add('icon-img');
-howImg9.src = howImg9Src;
-howImg9.alt = '';
-const howTitle9 = document.createElement('h3');
-howTitle9.classList.add('icon-title');
-howTitle9.textContent = 'Sleeping areas';
+export const sectionHow = createElement('section', ['how-you']);
+const howContainer = createElement('div', ['how-you-container']);
+const howTitle = createElement('h2', ['how-you-title'], `How you can help our shelter`, { id: 'help-shelter' });
+const howIcons = createElement('div', ['how-you-icons']);
+const icons = [
+  { imgSrc: howImg1Src, title: 'Pet food' },
+  { imgSrc: howImg2Src, title: 'Transportation' },
+  { imgSrc: howImg3Src, title: 'Toys' },
+  { imgSrc: howImg4Src, title: 'Bowls and cups' },
+  { imgSrc: howImg5Src, title: 'Shampoos' },
+  { imgSrc: howImg6Src, title: 'Vitamins' },
+  { imgSrc: howImg7Src, title: 'Medicines' },
+  { imgSrc: howImg8Src, title: 'Collars / leashes' },
+  { imgSrc: howImg9Src, title: 'Sleeping areas' }
+];
+
+icons.forEach(({ imgSrc, title }) => {
+  const icon = createElement('div', ['icon']);
+  const img = createElement('img', ['icon-img'], '', { src: imgSrc, alt: '' });
+  const iconTitle = createElement('h3', ['icon-title'], title);
+  icon.append(img, iconTitle);
+  howIcons.append(icon);
+});
 
 sectionHow.append(howContainer);
 howContainer.append(howTitle, howIcons);
-howIcons.append(howIcon1, howIcon2, howIcon3, howIcon4, howIcon5, howIcon6, howIcon7, howIcon8, howIcon9);
-howIcon1.append(howImg1, howTitle1);
-howIcon2.append(howImg2, howTitle2);
-howIcon3.append(howImg3, howTitle3);
-howIcon4.append(howImg4, howTitle4);
-howIcon5.append(howImg5, howTitle5);
-howIcon6.append(howImg6, howTitle6);
-howIcon7.append(howImg7, howTitle7);
-howIcon8.append(howImg8, howTitle8);
-howIcon9.append(howImg9, howTitle9);
