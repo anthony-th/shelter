@@ -1,6 +1,5 @@
 import { sectionOur } from './section_our_friends';
 
-export const main = document.createElement('main');
-main.classList.add('main');
+export const main = createElement('main', ['main']);
 
 main.append(sectionOur);

@@ -3,8 +3,8 @@ import { sectionAbout } from './section_about';
 import { sectionOur } from './section_our_friends';
 import { sectionHow } from './section_how_you';
 import { sectionYouCan } from './section_you_can';
+import { createElement } from '../common/createElement';
 
-export const main = document.createElement('main');
-main.classList.add('main');
+export const main = createElement('main', ['main']);
 
 main.append(sectionNotOnly, sectionAbout, sectionOur, sectionHow, sectionYouCan);
