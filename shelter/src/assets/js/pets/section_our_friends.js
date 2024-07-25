@@ -115,11 +115,9 @@ export function createCard(pet) {
     openModal(pet);
   });
   const cardImg = createElement('img', ['pets-our-card-img'], '', { src: pet.img, alt: '' });
-  card.append(cardImg);
   const cardTitle = createElement('h3', ['pets-our-card-title'], pet.name);
-  card.append(cardTitle);
   const cardBtn = createElement('button', ['pets-our-card-btn'], 'Learn more');
-  card.append(cardBtn);
+  card.append(cardImg, cardTitle, cardBtn);
   return card;
 }
 
