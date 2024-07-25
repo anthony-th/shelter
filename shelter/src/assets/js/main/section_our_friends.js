@@ -1,3 +1,5 @@
+import { createElement } from '../common/createElement';
+import { createCard, ourCards } from '../pets/section_our_friends';
 import arrowImg from '../../svg/arrow.svg';
 import modalImg from '../../svg/cancel.svg';
 import katrine from '../../img/katrine.webp';
@@ -9,35 +11,18 @@ import charly from '../../img/charly.webp';
 import scarlett from '../../img/scarlett.webp';
 import freddie from '../../img/freddie.webp';
 import dataJson from '../pets.json';
-import { createCard, ourCards } from '../pets/section_our_friends';
 
-export const sectionOur = document.createElement('section');
-sectionOur.classList.add('our-friends');
-const ourContainer = document.createElement('div');
-ourContainer.classList.add('our-friends-container');
-const ourTitle = document.createElement('h2');
-ourTitle.classList.add('our-friends-title');
-ourTitle.id = 'friends';
-ourTitle.innerHTML = `Our friends who<br>are looking for a house`;
-const ourSlider = document.createElement('div');
-ourSlider.classList.add('our-friends-slider');
-const ourPrevBtn = document.createElement('a');
-ourPrevBtn.classList.add('prev-btn');
-const prevImg = document.createElement('img');
-prevImg.classList.add('prev-img');
-prevImg.src = arrowImg;
+export const sectionOur = createElement('section', ['our-friends']);
+const ourContainer = createElement('div', ['our-friends-container']);
+const ourTitle = createElement('h2', ['our-friends-title'], 'Our friends who<br>are looking for a house', {id: 'friends'}, true);
+const ourSlider = createElement('div', ['our-friends-slider']);
+const ourPrevBtn = createElement('a', ['prev-btn']);
+const prevImg = createElement('img', ['prev-img'], '', { src: arrowImg });
+const ourNextBtn = createElement('a', ['next-btn']);
+const nextImg = createElement('img', ['next-img'], '', { src: arrowImg });
+const ourBtn = createElement('a', ['our-friends-btn'], 'Get to know the rest', { href: './pets.html' });
+
 ourCards.className = 'cards';
-ourCards.innerHTML = '';
-const ourNextBtn = document.createElement('a');
-ourNextBtn.classList.add('next-btn');
-const nextImg = document.createElement('img');
-nextImg.classList.add('next-img');
-nextImg.src = arrowImg;
-const ourBtn = document.createElement('a');
-ourBtn.classList.add('our-friends-btn');
-ourBtn.textContent = 'Get to know the rest';
-ourBtn.href = './pets.html';
-
 getData();
 
 function getData() {
