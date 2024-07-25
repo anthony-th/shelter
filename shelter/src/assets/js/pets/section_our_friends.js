@@ -1,33 +1,16 @@
+import { createElement } from "../common/createElement";
 import dataJson from "../pets.json";
 
-export const sectionOur = document.createElement("section");
-sectionOur.classList.add("pets-our-friends");
-const ourContainer = document.createElement("div");
-ourContainer.classList.add("pets-our-container");
-const ourTitle = document.createElement("h2");
-ourTitle.classList.add("pets-our-title");
-ourTitle.innerHTML = `Our friends who<br>are looking for a house`;
-export const ourCards = document.createElement("div");
-ourCards.classList.add("pets-our-cards");
-const ourPagination = document.createElement("div");
-ourPagination.classList.add("pets-our-pagination");
-const ourPaginationBtn1 = document.createElement("button");
-ourPaginationBtn1.classList.add("pets-our-pagination-btn");
-ourPaginationBtn1.textContent = "<<";
-const ourPaginationBtn2 = document.createElement("button");
-ourPaginationBtn2.classList.add("pets-our-pagination-btn");
-ourPaginationBtn2.textContent = "<";
-const ourPaginationBtn3 = document.createElement("button");
-ourPaginationBtn3.classList.add(
-  "pets-our-pagination-btn",
-  "pets-pagination-btn-active"
-);
-const ourPaginationBtn4 = document.createElement("button");
-ourPaginationBtn4.classList.add("pets-our-pagination-btn");
-ourPaginationBtn4.textContent = ">";
-const ourPaginationBtn5 = document.createElement("button");
-ourPaginationBtn5.classList.add("pets-our-pagination-btn");
-ourPaginationBtn5.textContent = ">>";
+export const sectionOur = createElement('section', ['pets-our-friends']);
+const ourContainer = createElement('div', ['pets-our-container']);
+const ourTitle = createElement('h2', ['pets-our-title'], 'Our friends who<br>are looking for a house', {}, true );
+export const ourCards = createElement('div', ['pets-our-cards']);
+const ourPagination = createElement('div', ['pets-our-pagination']);
+const ourPaginationBtn1 = createElement('button', ['pets-our-pagination-btn'], '<<');
+const ourPaginationBtn2 = createElement('button', ['pets-our-pagination-btn'], '<');
+const ourPaginationBtn3 = createElement('button', ['pets-our-pagination-btn', 'pets-pagination-btn-active']);
+const ourPaginationBtn4 = createElement('button', ['pets-our-pagination-btn'], '>');
+const ourPaginationBtn5 = createElement('button', ['pets-our-pagination-btn'], '>>');
 
 let currentPage = 1;
 let totalPages = 6;
@@ -127,65 +110,34 @@ function processData() {
 }
 
 export function createCard(pet) {
-  const card = document.createElement("div");
-  card.classList.add("pets-our-card");
+  const card = createElement('div', ['pets-our-card']);
   card.addEventListener("click", () => {
     openModal(pet);
   });
-  const cardImg = document.createElement("img");
-  cardImg.classList.add("pets-our-card-img");
-  cardImg.src = pet.img;
-  cardImg.alt = "";
+  const cardImg = createElement('img', ['pets-our-card-img'], '', { src: pet.img, alt: '' });
   card.append(cardImg);
-  const cardTitle = document.createElement("h3");
-  cardTitle.classList.add("pets-our-card-title");
-  cardTitle.textContent = pet.name;
+  const cardTitle = createElement('h3', ['pets-our-card-title'], pet.name);
   card.append(cardTitle);
-  const cardBtn = document.createElement("button");
-  cardBtn.classList.add("pets-our-card-btn");
-  cardBtn.textContent = "Learn more";
+  const cardBtn = createElement('button', ['pets-our-card-btn'], 'Learn more');
   card.append(cardBtn);
   return card;
 }
 
 export function openModal(pet) {
-  const shadow = document.createElement("div");
-  shadow.classList.add("modal-shadow");
-  const modal = document.createElement("div");
-  modal.classList.add("modal");
-  const modalImg = document.createElement("img");
-  modalImg.classList.add("modal-img");
-  modalImg.src = pet.img;
-  const modalCancel = document.createElement("button");
-  modalCancel.classList.add("modal-cancel");
-  const modalSvg = document.createElement("img");
-  modalSvg.classList.add("modal-svg");
-  modalSvg.src = "./assets/images/cancel.svg";
-  const modalBlock = document.createElement("div");
-  modalBlock.classList.add("modal-block");
-  const modalTitle = document.createElement("h2");
-  modalTitle.classList.add("modal-title");
-  modalTitle.textContent = pet.name;
-  const modalSubtitle = document.createElement("h3");
-  modalSubtitle.classList.add("modal-subtitle");
-  modalSubtitle.textContent = `${pet.type} - ${pet.breed}`;
-  const modalDescription = document.createElement("p");
-  modalDescription.classList.add("modal-description");
-  modalDescription.textContent = pet.description;
-  const modalTextList = document.createElement("ul");
-  modalTextList.classList.add("modal-text-block");
-  const modalTextAge = document.createElement("li");
-  modalTextAge.classList.add("modal-info");
-  modalTextAge.innerHTML = `<b>Age:</b> ${pet.age}`;
-  const modalTextInoculations = document.createElement("li");
-  modalTextInoculations.classList.add("modal-info");
-  modalTextInoculations.innerHTML = `<b>Inoculations:</b> ${pet.inoculations}`;
-  const modalTextDiseases = document.createElement("li");
-  modalTextDiseases.classList.add("modal-info");
-  modalTextDiseases.innerHTML = `<b>Diseases:</b> ${pet.diseases}`;
-  const modalTextParasites = document.createElement("li");
-  modalTextParasites.classList.add("modal-info");
-  modalTextParasites.innerHTML = `<b>Parasites:</b> ${pet.parasites}`;
+  const shadow = createElement('div', ['modal-shadow']);
+  const modal = createElement('div', ['modal']);
+  const modalImg = createElement('img', ['modal-img'], '', { src: pet.img, alt: '' });
+  const modalCancel = createElement('button', ['modal-cancel']);
+  const modalSvg = createElement('img', ['modal-svg'], '', { src: './assets/images/cancel.svg', alt: ''});
+  const modalBlock = createElement('div', ['modal-block']);
+  const modalTitle = createElement('h2', ['modal-title'], pet.name);
+  const modalSubtitle = createElement('h3', ['modal-subtitle'], `${pet.type} - ${pet.breed}`);
+  const modalDescription = createElement('p', ['modal-description'], pet.description);
+  const modalTextList = createElement('ul', ['modal-text-block']);
+  const modalTextAge = createElement('li', ['modal-info'], `<b>Age:</b> ${pet.age}`, {}, true);
+  const modalTextInoculations = createElement('li', ['modal-info'], `<b>Inoculations:</b> ${pet.inoculations}`, {}, true);
+  const modalTextDiseases = createElement('li', ['modal-info'], `<b>Diseases:</b> ${pet.diseases}`, {}, true);
+  const modalTextParasites = createElement('li', ['modal-info'], `<b>Parasites:</b> ${pet.parasites}`, {}, true);
   modalCancel.onclick = removeAll;
   shadow.onclick = removeAll;
   function removeAll() {
