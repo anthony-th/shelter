@@ -1,24 +1,13 @@
+import { createElement } from '../common/createElement';
 import puppyImg from '../../img/start-screen-puppy.webp';
 
-export const sectionNotOnly = document.createElement('section');
-sectionNotOnly.classList.add('not-only-block');
-const notOnlyContainer = document.createElement('div');
-notOnlyContainer.classList.add('not-only-container');
-const notOnlyTextBlock = document.createElement('div');
-notOnlyTextBlock.classList.add('not-only-textblock');
-const notOnlyTitle= document.createElement('h2');
-notOnlyTitle.classList.add('textblock__title');
-notOnlyTitle.textContent = 'Not only people need a house';
-const notOnlyText = document.createElement('p');
-notOnlyText.classList.add('textblock__description');
-notOnlyText.textContent = 'We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!';
-const notOnlyBtn = document.createElement('a');
-notOnlyBtn.classList.add('textblock__button');
-notOnlyBtn.textContent = 'Make a friend';
-notOnlyBtn.href = '#friends';
-const imgOnly = document.createElement('img');
-imgOnly.classList.add('not-only-pet');
-imgOnly.src = puppyImg;
+export const sectionNotOnly = createElement('section', ['not-only-block']);
+const notOnlyContainer = createElement('div', ['not-only-container']);
+const notOnlyTextBlock = createElement('div', ['not-only-textblock']);
+const notOnlyTitle = createElement('h2', ['textblock__title'], 'Not only people need a house');
+const notOnlyText = createElement('p', ['textblock__description'], 'We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!');
+const notOnlyBtn = createElement('a', ['textblock__button'], 'Make a friend', { href: '#friends'});
+const imgOnly = createElement('img', ['not-only-pet'], '', { src: puppyImg, alt: '' });
 
 sectionNotOnly.append(notOnlyContainer);
 notOnlyContainer.append(notOnlyTextBlock, imgOnly);
