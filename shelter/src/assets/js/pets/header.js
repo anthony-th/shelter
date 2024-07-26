@@ -1,7 +1,7 @@
 import { createHeader } from '../common/createHeader.js';
 
 const petsHeader= {
-    headerClasses: ['header'],
+    headerClasses: ['header', 'background-color-white'],
     containerClasses: ['header__container'],
     logoClasses: ['logo'],
     logoHref: './',
