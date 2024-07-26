@@ -4,35 +4,12 @@
       .nav {
         .nav__list {
           .nav__item {
-            .links {
-              user-select: none;
-              color: $color-dark-s;
-              cursor: pointer;
+            .links.color-pastel-grey {
               &:hover {
                 color: $color-light-s;
               }
             }
-          }
-        }
-      }
-      .logo {
-        &:hover {
-          .logo__title {
-            color: $color-light-l;
-          }
-          .logo__subtitle {
-            color: $color-primary;
-          }
-        }
-      }
-    }
-  }
-  .pets-header {
-    .pets-header__container {
-      .pets-nav {
-        .pets-nav__list {
-          .pets-nav__item {
-            .pets-links {
+            .links.color-davy-gray {
               &:hover {
                 color: $color-dark-3xl;
               }
@@ -40,10 +17,18 @@
           }
         }
       }
-      .pets-logo {
+      .logo {
         &:hover {
-          .pets-logo__title,
-          .pets-logo__subtitle {
+          .logo__title.color-apricot {
+            color: $color-light-l;
+          }
+          .logo__subtitle.color-smoky-white {
+            color: $color-primary;
+          }
+          .logo__title.color-davy-gray {
+            color: $color-dark-3xl;
+          }
+          .logo__subtitle.color-davy-gray {
             color: $color-dark-3xl;
           }
         }

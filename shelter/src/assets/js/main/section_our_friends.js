@@ -17,9 +17,9 @@ const ourContainer = createElement('div', ['our-friends-container']);
 const ourTitle = createElement('h2', ['our-friends-title'], 'Our friends who<br>are looking for a house', {id: 'friends'}, true);
 const ourSlider = createElement('div', ['our-friends-slider']);
 const ourPrevBtn = createElement('a', ['prev-btn']);
-const prevImg = createElement('img', ['prev-img'], '', { src: arrowImg });
+const prevImg = createElement('img', ['prev-img'], '', { src: arrowImg, alt: '' });
 const ourNextBtn = createElement('a', ['next-btn']);
-const nextImg = createElement('img', ['next-img'], '', { src: arrowImg });
+const nextImg = createElement('img', ['next-img'], '', { src: arrowImg, alt: '' });
 const ourBtn = createElement('a', ['our-friends-btn'], 'Get to know the rest', { href: './pets.html' });
 
 ourCards.className = 'cards';

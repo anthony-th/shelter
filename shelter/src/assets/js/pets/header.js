@@ -1,26 +1,26 @@
 import { createHeader } from '../common/createHeader.js';
 
 const petsHeader= {
-    headerClasses: ['pets-header'],
-    containerClasses: ['pets-header__container'],
-    logoClasses: ['pets-logo'],
+    headerClasses: ['header'],
+    containerClasses: ['header__container'],
+    logoClasses: ['logo'],
     logoHref: './',
-    titleClasses: ['pets-logo__title'],
+    titleClasses: ['logo__title', 'color-davy-gray'],
     titleText: 'Cozy House',
-    subtitleClasses: ['pets-logo__subtitle'],
+    subtitleClasses: ['logo__subtitle', 'color-signal-black'],
     subtitleText: 'Shelter for pets in Boston',
-    navClasses: ['pets-nav'],
-    navListClasses: ['pets-nav__list'],
-    burgerMenuClasses: ['pets-burger-menu'],
-    burgerLineClasses: ['pets-burger-line'],
+    navClasses: ['nav'],
+    navListClasses: ['nav__list', 'background-color-m767-white'],
+    burgerMenuClasses: ['burger-menu'],
+    burgerLineClasses: ['burger-line', 'background-color-black'],
     shadowClasses: ['shadow'],
     navItems: [
-        { text: 'About the shelter', href: './', classes: ['pets-links'] },
-        { text: 'Our pets', href: '#', classes: ['pets-links', 'pets-active-nav'] },
-        { text: 'Help the shelter', href: './#help-shelter', classes: ['pets-links'] },
-        { text: 'Contacts', href: '#contacts', classes: ['pets-links'] }
+        { text: 'About the shelter', href: './', classes: ['links', 'color-davy-gray'] },
+        { text: 'Our pets', href: '#no_scroll', classes: ['links', 'active-nav', 'active-nav-pets'] },
+        { text: 'Help the shelter', href: './#help-shelter', classes: ['links', 'color-davy-gray'] },
+        { text: 'Contacts', href: '#contacts', classes: ['links', 'color-davy-gray'] }
     ],
-    navItemClass: 'pets-nav__item'
+    navItemClass: 'nav__item'
 };
 
 export const header = createHeader(petsHeader);

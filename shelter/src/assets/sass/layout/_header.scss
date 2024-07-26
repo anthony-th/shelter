@@ -1,16 +1,19 @@
 .header {
-  margin: 0 auto;
-  position: relative;
-  max-width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   .header__container {
-    margin-top: 30px;
+    max-width: 1280px;
     padding: 0 40px;
-    height: 60px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
     @media screen {
       @media (max-width: 1279px) {
         padding: 0 30px;
@@ -27,7 +30,6 @@
       width: 184px;
       height: 60px;
       .logo__title {
-        color: $color-primary;
         font-size: 32px;
         line-height: 110%;
         font-family: 'Georgia';
@@ -40,7 +42,6 @@
         font-family: 'Arial';
         font-weight: 400;
         font-style: normal;
-        color: $color-light-l;
         letter-spacing: 0.1em;
         line-height: 15px;
         font-size: 13px;
@@ -60,7 +61,6 @@
           top: 0;
           right: -320px;
           height: 100vh;
-          background: $color-dark-3xl;
           justify-content: center;
           align-items: center;
           gap: 40px;
@@ -79,18 +79,26 @@
           }
           .links {
             user-select: none;
-            color: $color-dark-s;
             cursor: pointer;
             &:active {
               border-bottom: 3px solid $color-primary;
               padding-bottom: 3px;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+          .links.color-pastel-grey {
+            &:active {
               color: $color-light-s;
+            }
+          }
+          .links.color-davy-gray {
+            &:active {
+              color: $color-dark-3xl;
             }
           }
           .active-nav {
             border-bottom: 3px solid $color-primary;
             padding-bottom: 3px;
-            color: $color-light-s;
             cursor: default;
           }
         }
@@ -109,7 +117,6 @@
         }
         .burger-line {
           height: 2px;
-          background-color: $color-primary;
           width: 100%;
           border: none;
         }

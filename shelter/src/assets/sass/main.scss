@@ -1,10 +1,10 @@
 @import 'utils/variables';
+
 @import 'base/fonts';
 @import 'base/reset';
 @import 'base/base';
 
 @import 'layout/header';
-@import 'layout/header_pets';
 @import 'layout/footer';
 
 @import 'sections/about';
@@ -15,5 +15,7 @@
 @import 'sections/you_can';
 
 @import 'components/modal';
+
+@import 'modifiers/modifiers';
 
 @import 'media/hover';

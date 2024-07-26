@@ -1,0 +1,55 @@
+.color-davy-gray {
+  color: $color-dark-l;
+}
+
+.color-signal-black {
+  color: $color-dark-3xl;
+}
+
+.color-apricot {
+  color: $color-primary;
+}
+
+.color-smoky-white {
+  color: $color-light-l;
+}
+
+.color-pastel-grey {
+  color: $color-dark-s;
+}
+
+.color-snow {
+  color: $color-light-s;
+}
+
+.color-black {
+  color: $color-dark-4xl;
+}
+
+.background-color-m767-signal-black {
+  @media screen and (max-width: 767px) {
+    background-color: $color-dark-3xl;
+  }
+}
+
+.background-color-m767-white {
+  @media screen and (max-width: 767px) {
+    background-color: $color-light-xl;
+  }
+}
+
+.background-color-apricot {
+  background-color: $color-primary;
+}
+
+.background-color-black {
+  background-color: $color-dark-4xl;
+}
+
+.active-nav-main {
+  color: $color-light-s;
+}
+
+.active-nav-pets {
+  color: $color-dark-3xl;
+}
