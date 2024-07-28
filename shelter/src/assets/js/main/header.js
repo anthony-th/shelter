@@ -4,7 +4,7 @@ const mainHeader = {
     headerClasses: ['header'],
     containerClasses: ['header__container'],
     logoClasses: ['logo'],
-    logoHref: '#',
+    logoHref: '#no_scroll',
     titleClasses: ['logo__title', 'color-apricot'],
     titleText: 'Cozy House',
     subtitleClasses: ['logo__subtitle', 'color-smoky-white'],

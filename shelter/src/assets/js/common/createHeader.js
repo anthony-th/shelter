@@ -41,7 +41,12 @@ export function createHeader(page) {
         const listItemLink = createElement('a', classes, text, { href });
         listItem.append(listItemLink);
         navList.append(listItem);
-        listItemLink.onclick = toggleMenu;
+        const mediaCheck767 = window.matchMedia('(max-width: 767px)');
+        const checkMedia = () => {
+            mediaCheck767.matches ? listItemLink.onclick = toggleMenu : listItemLink.onclick = null;
+        }
+        checkMedia();
+        mediaCheck767.onchange = checkMedia;
     });
 
     burgerMenu.onclick = toggleMenu;
