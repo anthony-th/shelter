@@ -26,9 +26,9 @@ const icons = [
 ];
 
 icons.forEach(({ imgSrc, title }) => {
-  const icon = createElement('div', ['icon']);
+  const icon = createElement('figure', ['icon']);
   const img = createElement('img', ['icon-img'], '', { src: imgSrc, alt: '' });
-  const iconTitle = createElement('h3', ['icon-title'], title);
+  const iconTitle = createElement('figcaption', ['icon-title'], title);
   icon.append(img, iconTitle);
   howIcons.append(icon);
 });
