@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .pets-our-friends {
   background: $color-light-l;
   .pets-our-container {

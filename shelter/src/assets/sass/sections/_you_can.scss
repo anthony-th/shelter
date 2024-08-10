@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .you-can {
   background: $color-light-l;
   .you-can-container {
