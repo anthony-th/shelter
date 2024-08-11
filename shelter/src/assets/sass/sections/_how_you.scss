@@ -4,10 +4,7 @@
   margin: 0 auto;
   max-width: 1280px;
   padding: 80px 40px 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, column);
   gap: 60px;
   @media screen and (max-width: 767px) {
     padding: 42px 15px;
@@ -29,10 +26,9 @@
     }
   }
   .how-you-icons {
-    display: flex;
+    @include flex(normal, center);
     flex-wrap: wrap;
     gap: 55px 120px;
-    justify-content: center;
     @media screen {
       @media (max-width: 1279px) {
         gap: 55px 60px;
@@ -53,9 +49,7 @@
     }
     .icon {
       max-width: fit-content;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex(center, flex-start, column);
       gap: 30px;
       @media screen {
         @media (max-width: 1279px) {

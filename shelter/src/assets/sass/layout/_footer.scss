@@ -6,9 +6,7 @@
     padding: 40px 40px 0;
     margin: 0 auto;
     max-width: 1280px;
-    justify-content: space-between;
-    display: flex;
-    align-items: flex-end;
+    @include flex(flex-end, space-between);
     @media screen {
       @media (max-width: 1279px) {
         flex-wrap: wrap;
@@ -32,8 +30,7 @@
     .contacts {
       padding: 16px 0 60px;
       max-width: 278px;
-      display: flex;
-      flex-direction: column;
+      @include flex(normal, flex-start, column);
       gap: 43px;
       @media screen {
         @media (max-width: 1060px) {
@@ -59,8 +56,7 @@
       }
       .mail,
       .phone {
-        display: flex;
-        align-items: center;
+        @include flex(center, flex-start);
         gap: 20px;
         cursor: pointer;
         width: fit-content;
@@ -79,8 +75,7 @@
     .locations {
       padding: 16px 0 60px;
       max-width: 302px;
-      display: flex;
-      flex-direction: column;
+      @include flex(normal, flex-start, column);
       gap: 32px;
       @media screen {
         @media (max-width: 1060px) {
@@ -108,8 +103,7 @@
       }
       .location-boston,
       .location-london {
-        display: flex;
-        align-items: center;
+        @include flex(center);
         gap: 20px;
         cursor: pointer;
         width: fit-content;

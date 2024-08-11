@@ -3,8 +3,7 @@
 .about__container {
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  @include flex(normal, center);
   padding: 80px 40px 100px;
   gap: 120px;
   @media screen {
@@ -31,8 +30,7 @@
   .about__text-block {
     padding: 14px 0;
     max-width: 430px;
-    display: flex;
-    flex-direction: column;
+    @include flex(normal, flex-start, column);
     gap: 25px;
     @media screen {
       @media (max-width: 860px) {

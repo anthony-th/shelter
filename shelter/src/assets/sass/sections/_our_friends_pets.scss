@@ -6,10 +6,8 @@
     max-width: 1280px;
     margin: 120px auto 0;
     padding: 80px 40px 99px;
-    display: flex;
-    flex-direction: column;
+    @include flex(center, flex-start, column);
     gap: 45px;
-    align-items: center;
     @media screen {
       @media (max-width: 1279px) {
         gap: 29px;
@@ -34,9 +32,7 @@
       }
     }
     .pets-our-cards {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(center, center);
       flex-wrap: wrap;
       gap: 30px 40px;
       padding: 15px 0;
@@ -86,12 +82,10 @@
 }
 
 .pets-our-card {
-  display: flex;
-  flex-direction: column;
+  @include flex(center, flex-start, column);
   gap: 30px;
   max-width: 270px;
   padding: 0 0 30px;
-  align-items: center;
   background: $color-light-s;
   border-radius: 9px;
   cursor: pointer;

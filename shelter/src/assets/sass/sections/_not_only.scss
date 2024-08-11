@@ -21,8 +21,7 @@
       }
     }
     .not-only-textblock {
-      display: flex;
-      flex-direction: column;
+      @include flex(normal, flex-start, column);
       gap: 42px;
       padding: 163px 0 0;
       max-width: 460px;
@@ -88,9 +87,7 @@
         font-size: 17px;
         line-height: 130%;
         color: $color-dark-3xl;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
         letter-spacing: 0.06em;
         cursor: pointer;
       }

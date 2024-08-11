@@ -6,8 +6,7 @@
     margin: 0 auto;
     max-width: 1280px;
     padding: 80px 0 100px;
-    display: flex;
-    justify-content: center;
+    @include flex(normal, center);
     gap: 30px;
     @media screen {
       @media (max-width: 1279px) {
@@ -38,8 +37,7 @@
       }
     }
     .you-can-block {
-      display: flex;
-      flex-direction: column;
+      @include flex(normal, flex-start, column);
       gap: 19px;
       max-width: 380px;
       max-height: 282px;
@@ -78,8 +76,7 @@
         border-radius: 9px;
         max-width: 349px;
         height: 43px;
-        display: flex;
-        align-items: center;
+        @include flex(center);
         padding: 9px 15px;
         gap: 15px;
         cursor: pointer;
