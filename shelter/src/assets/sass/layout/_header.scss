@@ -1,9 +1,7 @@
-@use '../utils' as *;
+@use '../abstracts' as *;
 
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center);
   height: 120px;
   position: absolute;
   top: 0;
@@ -13,9 +11,7 @@
     max-width: 1280px;
     padding: 0 40px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(center, space-between);
     @media screen {
       @media (max-width: 1279px) {
         padding: 0 30px;
@@ -25,10 +21,7 @@
       }
     }
     .logo {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      align-items: center;
+      @include flex(center, space-between, column);
       width: 184px;
       height: 60px;
       .logo__title {
@@ -57,14 +50,12 @@
         bottom: 2px;
         right: 2px;
         @media screen and (max-width: 767px) {
-          flex-direction: column;
+          @include flex(center, center, column);
           position: fixed;
           right: 0;
           top: 0;
           right: -320px;
           height: 100vh;
-          justify-content: center;
-          align-items: center;
           gap: 40px;
           z-index: 3;
           width: 320px;
@@ -106,9 +97,7 @@
         }
       }
       .burger-menu {
-        display: none;
-        justify-content: space-between;
-        flex-direction: column;
+        @include flex(normal, space-between, column, none);
         width: 30px;
         height: 22px;
         z-index: 5;
