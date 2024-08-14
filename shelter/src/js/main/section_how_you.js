@@ -1,13 +1,13 @@
-import { createElement } from '../common/createElement';
-import howImg1Src from '../../svg/icon-pet-food.svg';
-import howImg2Src from '../../svg/icon-transportation.svg';
-import howImg3Src from '../../svg/icon-toys.svg';
-import howImg4Src from '../../svg/icon-bowls-and-cups.svg';
-import howImg5Src from '../../svg/icon-shampoos.svg';
-import howImg6Src from '../../svg/icon-vitamins.svg';
-import howImg7Src from '../../svg/icon-medicines.svg';
-import howImg8Src from '../../svg/icon-collars-leashes.svg';
-import howImg9Src from '../../svg/icon-sleeping-area.svg';
+import { createElement } from '../../common/createElement';
+import howImg1Src from '../../assets/svg/icon-pet-food.svg';
+import howImg2Src from '../../assets/svg/icon-transportation.svg';
+import howImg3Src from '../../assets/svg/icon-toys.svg';
+import howImg4Src from '../../assets/svg/icon-bowls-and-cups.svg';
+import howImg5Src from '../../assets/svg/icon-shampoos.svg';
+import howImg6Src from '../../assets/svg/icon-vitamins.svg';
+import howImg7Src from '../../assets/svg/icon-medicines.svg';
+import howImg8Src from '../../assets/svg/icon-collars-leashes.svg';
+import howImg9Src from '../../assets/svg/icon-sleeping-area.svg';
 
 export const sectionHow = createElement('section', ['how-you']);
 const howContainer = createElement('div', ['how-you-container']);

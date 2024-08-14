@@ -1,5 +1,5 @@
-import { createElement } from '../common/createElement';
-import aboutImgSrc from '../../img/about-the-shelter.webp';
+import { createElement } from '../../common/createElement';
+import aboutImgSrc from '../../assets/img/about-the-shelter.webp';
 
 export const sectionAbout = createElement('section', ['about']);
 const aboutContainer = createElement('div', ['about__container']);

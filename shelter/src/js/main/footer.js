@@ -1,10 +1,10 @@
-import { createElement } from '../common/createElement.js';
-import { createContact } from '../common/createContact.js';
-import { createLocation } from '../common/createLocation.js';
-import emailImgSrc from '../../svg/mail.svg';
-import phoneImgSrc from '../../svg/phone.svg';
-import locationImgSrc from '../../svg/pin.svg';
-import footerImgSrc from '../../img/footer-puppy.webp';
+import { createElement } from '../../common/createElement.js';
+import { createContact } from '../../common/createContact.js';
+import { createLocation } from '../../common/createLocation.js';
+import emailImgSrc from '../../assets/svg/mail.svg';
+import phoneImgSrc from '../../assets/svg/phone.svg';
+import locationImgSrc from '../../assets/svg/pin.svg';
+import footerImgSrc from '../../assets/img/footer-puppy.webp';
 
 export const footer = createElement('footer', ['footer']);
 const footerContainer = createElement('div', ['footer-container']);

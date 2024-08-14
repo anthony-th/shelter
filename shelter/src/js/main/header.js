@@ -1,4 +1,4 @@
-import { createHeader } from '../common/createHeader.js';
+import { createHeader } from '../../common/createHeader.js';
 
 const mainHeader = {
     headerClasses: ['header'],

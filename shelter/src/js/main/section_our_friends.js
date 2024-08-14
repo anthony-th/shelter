@@ -1,16 +1,16 @@
-import { createElement } from '../common/createElement';
+import { createElement } from '../../common/createElement';
 import { createCard, ourCards } from '../pets/section_our_friends';
-import arrowImg from '../../svg/arrow.svg';
-import modalImg from '../../svg/cancel.svg';
-import katrine from '../../img/katrine.webp';
-import jennifer from '../../img/jennifer.webp';
-import woody from '../../img/woody.webp';
-import sophia from '../../img/sophia.webp';
-import timmy from '../../img/timmy.webp';
-import charly from '../../img/charly.webp';
-import scarlett from '../../img/scarlett.webp';
-import freddie from '../../img/freddie.webp';
-import dataJson from '../pets.json';
+import arrowImg from '../../assets/svg/arrow.svg';
+import modalImg from '../../assets/svg/cancel.svg';
+import katrine from '../../assets/img/katrine.webp';
+import jennifer from '../../assets/img/jennifer.webp';
+import woody from '../../assets/img/woody.webp';
+import sophia from '../../assets/img/sophia.webp';
+import timmy from '../../assets/img/timmy.webp';
+import charly from '../../assets/img/charly.webp';
+import scarlett from '../../assets/img/scarlett.webp';
+import freddie from '../../assets/img/freddie.webp';
+import dataJson from '../../data/pets.json';
 
 export const sectionOur = createElement('section', ['our-friends']);
 const ourContainer = createElement('div', ['our-friends-container']);

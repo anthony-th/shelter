@@ -1,4 +1,4 @@
-import '../sass/main.scss';
+import '../styles/main.scss';
 
 import { header } from './pets/header';
 import { main } from './pets/main';

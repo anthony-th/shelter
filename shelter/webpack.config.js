@@ -8,8 +8,8 @@ module.exports = {
   devtool: 'inline-source-map',
   mode: 'development',
   entry: {
-    index: './src/assets/js/index.js',
-    pets: './src/assets/js/pets.js'
+    index: './src/js/index.js',
+    pets: './src/js/pets.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

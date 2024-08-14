@@ -1,6 +1,6 @@
-import { createElement } from '../common/createElement';
-import youCanImgSrc from '../../img/youCan.webp';
-import youCanCardImgSrc from '../../svg/credit-card.svg';
+import { createElement } from '../../common/createElement';
+import youCanImgSrc from '../../assets/img/youCan.webp';
+import youCanCardImgSrc from '../../assets/svg/credit-card.svg';
 
 export const sectionYouCan = createElement('section', ['you-can']);
 const youCanContainer = createElement('div', ['you-can-container']);

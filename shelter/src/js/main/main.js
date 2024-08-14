@@ -1,4 +1,4 @@
-import { createElement } from '../common/createElement';
+import { createElement } from '../../common/createElement';
 import { sectionNotOnly } from './section_not_only';
 import { sectionAbout } from './section_about';
 import { sectionOur } from './section_our_friends';

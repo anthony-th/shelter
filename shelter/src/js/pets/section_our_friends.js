@@ -1,5 +1,5 @@
-import { createElement } from "../common/createElement";
-import dataJson from "../pets.json";
+import { createElement } from "../../common/createElement";
+import dataJson from "../../data/pets.json";
 
 export const sectionOur = createElement('section', ['pets-our-friends']);
 const ourContainer = createElement('div', ['pets-our-container']);

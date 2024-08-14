@@ -1,5 +1,5 @@
-import { createElement } from '../common/createElement';
-import puppyImg from '../../img/start-screen-puppy.webp';
+import { createElement } from '../../common/createElement';
+import puppyImg from '../../assets/img/start-screen-puppy.webp';
 
 export const sectionNotOnly = createElement('section', ['not-only-block']);
 const notOnlyContainer = createElement('div', ['not-only-container']);
