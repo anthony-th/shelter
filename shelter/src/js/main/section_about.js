@@ -1,9 +1,8 @@
 import { createElement } from '../../common/createElement';
-import aboutImgSrc from '../../assets/img/about-the-shelter.webp';
 
 export const sectionAbout = createElement('section', ['about']);
 const aboutContainer = createElement('div', ['about__container']);
-const aboutImg = createElement('img', ['about__img'], '', { src: aboutImgSrc, alt: '' });
+const aboutImg = createElement('img', ['about__img'], '', { src: './assets/img/about-the-shelter.webp', alt: '' });
 const aboutBlock = createElement('div', ['about__text-block']);
 const aboutTitle = createElement('h2', ['about__title'], 'About the shelter “Cozy House”');
 const aboutText1 = createElement('p', ['about__text'], 'Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.');

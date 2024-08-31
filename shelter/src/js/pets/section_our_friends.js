@@ -126,7 +126,7 @@ export function openModal(pet) {
   const modal = createElement('div', ['modal']);
   const modalImg = createElement('img', ['modal-img'], '', { src: pet.img, alt: '' });
   const modalCancel = createElement('button', ['modal-cancel']);
-  const modalSvg = createElement('img', ['modal-svg'], '', { src: './assets/images/cancel.svg', alt: ''});
+  const modalSvg = createElement('img', ['modal-svg'], '', { src: './assets/svg/cancel.svg', alt: ''});
   const modalBlock = createElement('div', ['modal-block']);
   const modalTitle = createElement('h2', ['modal-title'], pet.name);
   const modalSubtitle = createElement('h3', ['modal-subtitle'], `${pet.type} - ${pet.breed}`);

@@ -1,28 +1,19 @@
 import { createElement } from '../../common/createElement';
-import howImg1Src from '../../assets/svg/icon-pet-food.svg';
-import howImg2Src from '../../assets/svg/icon-transportation.svg';
-import howImg3Src from '../../assets/svg/icon-toys.svg';
-import howImg4Src from '../../assets/svg/icon-bowls-and-cups.svg';
-import howImg5Src from '../../assets/svg/icon-shampoos.svg';
-import howImg6Src from '../../assets/svg/icon-vitamins.svg';
-import howImg7Src from '../../assets/svg/icon-medicines.svg';
-import howImg8Src from '../../assets/svg/icon-collars-leashes.svg';
-import howImg9Src from '../../assets/svg/icon-sleeping-area.svg';
 
 export const sectionHow = createElement('section', ['how-you']);
 const howContainer = createElement('div', ['how-you-container']);
 const howTitle = createElement('h2', ['how-you-title'], `How you can help our shelter`, { id: 'help-shelter' });
 const howIcons = createElement('div', ['how-you-icons']);
 const icons = [
-  { imgSrc: howImg1Src, title: 'Pet food' },
-  { imgSrc: howImg2Src, title: 'Transportation' },
-  { imgSrc: howImg3Src, title: 'Toys' },
-  { imgSrc: howImg4Src, title: 'Bowls and cups' },
-  { imgSrc: howImg5Src, title: 'Shampoos' },
-  { imgSrc: howImg6Src, title: 'Vitamins' },
-  { imgSrc: howImg7Src, title: 'Medicines' },
-  { imgSrc: howImg8Src, title: 'Collars / leashes' },
-  { imgSrc: howImg9Src, title: 'Sleeping areas' }
+  { imgSrc: './assets/svg/icon-pet-food.svg', title: 'Pet food' },
+  { imgSrc: './assets/svg/icon-transportation.svg', title: 'Transportation' },
+  { imgSrc: './assets/svg/icon-toys.svg', title: 'Toys' },
+  { imgSrc: './assets/svg/icon-bowls-and-cups.svg', title: 'Bowls and cups' },
+  { imgSrc: './assets/svg/icon-shampoos.svg', title: 'Shampoos' },
+  { imgSrc: './assets/svg/icon-vitamins.svg', title: 'Vitamins' },
+  { imgSrc: './assets/svg/icon-medicines.svg', title: 'Medicines' },
+  { imgSrc: './assets/svg/icon-collars-leashes.svg', title: 'Collars / leashes' },
+  { imgSrc: './assets/svg/icon-sleeping-area.svg', title: 'Sleeping areas' }
 ];
 
 icons.forEach(({ imgSrc, title }) => {

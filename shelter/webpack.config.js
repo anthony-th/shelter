@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -12,6 +13,7 @@ module.exports = {
     pets: './src/js/pets.js'
   },
   output: {
+    publicPath: 'auto',
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
   },  
@@ -54,6 +56,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/assets/",
+          to: "assets/",
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
