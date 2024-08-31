@@ -138,9 +138,11 @@ export function openModal(pet) {
   const modalTextParasites = createElement('li', ['modal-info'], `<b>Parasites:</b> ${pet.parasites}`, {}, true);
   modalCancel.onclick = removeAll;
   shadow.onclick = removeAll;
+  document.body.classList.add('overflow-hidden');
   function removeAll() {
     modal.remove();
     shadow.remove();
+    document.body.classList.remove('overflow-hidden');
   }
   modalTextList.append(
     modalTextAge,
