@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
@@ -13,9 +12,9 @@ module.exports = {
     pets: './src/js/pets.js'
   },
   output: {
-    publicPath: 'auto',
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
+    clean: true,
   },  
   module: {
     rules: [
@@ -43,7 +42,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][ext]'
+          filename: 'assets/img/[name][ext]'
         }
       },
       {
@@ -78,7 +77,7 @@ module.exports = {
       logo: './src/assets/img/favicon.png',
       mode: 'webapp',
       devMode: 'webapp', 
-      prefix: 'assets/images/',
+      prefix: 'assets/img/',
       favicons: {
         icons: {
           android: false,
@@ -95,6 +94,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "style.css",
     }),
-    new CleanWebpackPlugin(),
   ]
 };
